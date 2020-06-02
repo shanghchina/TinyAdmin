@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProvider>{4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}</SccProvider>
+    <SccLocalPath>.</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tiny.Common.NetCore\Tiny.Common.Dapper\Tiny.Common.Dapper.csproj" />
+    <ProjectReference Include="..\Tiny.OPS.Common\Tiny.OPS.Common.csproj" />
+    <ProjectReference Include="..\Tiny.OPS.Contract\Tiny.OPS.Contract.csproj" />
+    <ProjectReference Include="..\Tiny.OPS.Domain\Tiny.OPS.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="EXT\" />
+  </ItemGroup>
+
+</Project>

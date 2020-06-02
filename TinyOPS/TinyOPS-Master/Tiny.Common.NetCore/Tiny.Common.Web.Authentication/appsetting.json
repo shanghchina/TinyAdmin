@@ -1,0 +1,28 @@
+{
+  "OnlyAuthentication": {
+    "SSOConfig": {
+      "State": true,
+      "RelyingName": "wf.local.com",
+      "DomainName": "wf.local.com",
+      "DefaultURL": "http://wf.local.com/TaskList/SimpleListTask",
+      "Realm": "http://wf.local.com",
+      "LoginURL": "http://rls.dev.com/account/signin",
+      "TokenURL": "http://rls.dev.com/AccountToken",
+      "Signing": "123",
+      "AES": {
+        "Key": "",
+        "IV": ""
+      },
+      "SsoRejects": [ "", "" ]
+
+    },
+    "APIConfig": {
+      "TokenUrl": "",
+      "TokenVerify": "http://api.rls.local.com:89/AccountToken/TokenVerify",
+      "TokenSpeed": 0,
+      "TokenRefresh": "",
+      "ApiRejects": [ "/api/values", "" ]
+    } 
+
+  }
+}

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<containers>
+  <container name="Repository">
+    <register type="Tiny.Repository.IUserRepository, Tiny.Repository"
+              mapTo="Tiny.Repository.UserRepository, Tiny.Repository" lifetime="transient">
+    </register>
+    <register type="Tiny.Repository.IUserRepository1, Tiny.Repository"
+              mapTo="Tiny.Repository.UserRepository1, Tiny.Repository" lifetime="transient">
+    </register>
+    <register type="Tiny.Repository.IUserRepository2, Tiny.Repository"
+              mapTo="Tiny.Repository.UserRepository2, Tiny.Repository" lifetime="transient">
+    </register>
+    <register type="Tiny.Repository.IUserRepository3, Tiny.Repository"
+              mapTo="Tiny.Repository.UserRepository3, Tiny.Repository" lifetime="transient">
+    </register>
+  </container>
+
+  <container name="Service">
+    <register type="Tiny.Service.IUserService, Tiny.Service"
+              mapTo="Tiny.Service.UserService, Tiny.Service" lifetime="transient">
+    </register>
+    <register type="Tiny.Service.IUserService1, Tiny.Service"
+              mapTo="Tiny.Service.UserService1, Tiny.Service" lifetime="transient">
+    </register>
+    <register type="Tiny.Service.IUserService2, Tiny.Service"
+              mapTo="Tiny.Service.UserService2, Tiny.Service" lifetime="transient">
+    </register>
+  </container>
+</containers>

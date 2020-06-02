@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <Dislan>
+    <XmlLanguage>
+      <!--票据状态-->
+      <Language Name="Tiny.Model.InvoiceProperty">
+        <Message Name="CashBasis" Value="现收" Id="1000"></Message>
+        <Message Name="Receivables" Value="应收" Id="2000"></Message>
+        <Message Name="RushReceivable" Value="冲应收" Id="3000"></Message>
+      </Language>
+      <!--票据变更单状态-->
+      <Language Name="Tiny.Model.InvoiceChangeStatus">
+        <Message Name="Saved" Value="保存" Id="10"></Message>
+        <Message Name="Auditing" Value="审批中" Id="20"></Message>
+        <Message Name="Passed" Value="通过审核" Id="30"></Message>
+        <Message Name="UnPassed" Value="驳回" Id="40"></Message>
+      </Language>
+      <!--票据池状态-->
+      <Language Name="Tiny.Model.InvoicePoolStatus">
+        <Message Name="Watting" Value="等待生成" Id="10"></Message>
+        <Message Name="Created" Value="已生成" Id="20"></Message>
+        <Message Name="Creating" Value="生成中" Id="30"></Message>
+        <Message Name="Error" Value="生成错误" Id="40"></Message>
+      </Language>
+      <!--票据状态-->
+      <Language Name="Tiny.Model.InvoiceStatus">
+        <Message Name="Normal" Value="蓝字发票" Id="10"></Message>
+        <Message Name="Scarlet" Value="红字发票" Id="20"></Message>
+      </Language>
+      <!--票据状态-->
+      <Language Name="Tiny.Model.RequestLogStatus">
+        <Message Name="Success" Value="推送成功" Id="10"></Message>
+        <Message Name="UnSuccess" Value="推送失败" Id="20"></Message>
+      </Language>
+    </XmlLanguage>
+  </Dislan>
+</configuration>

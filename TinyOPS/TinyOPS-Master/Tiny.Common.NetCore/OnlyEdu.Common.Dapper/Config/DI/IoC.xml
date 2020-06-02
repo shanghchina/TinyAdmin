@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<containers>
+  <container name="Repository">
+    <register type="OnlyEdu.Repository.IUserRepository, OnlyEdu.Repository"
+              mapTo="OnlyEdu.Repository.UserRepository, OnlyEdu.Repository" lifetime="transient">
+    </register>
+    <register type="OnlyEdu.Repository.IUserRepository1, OnlyEdu.Repository"
+              mapTo="OnlyEdu.Repository.UserRepository1, OnlyEdu.Repository" lifetime="transient">
+    </register>
+    <register type="OnlyEdu.Repository.IUserRepository2, OnlyEdu.Repository"
+              mapTo="OnlyEdu.Repository.UserRepository2, OnlyEdu.Repository" lifetime="transient">
+    </register>
+    <register type="OnlyEdu.Repository.IUserRepository3, OnlyEdu.Repository"
+              mapTo="OnlyEdu.Repository.UserRepository3, OnlyEdu.Repository" lifetime="transient">
+    </register>
+  </container>
+
+  <container name="Service">
+    <register type="OnlyEdu.Service.IUserService, OnlyEdu.Service"
+              mapTo="OnlyEdu.Service.UserService, OnlyEdu.Service" lifetime="transient">
+    </register>
+    <register type="OnlyEdu.Service.IUserService1, OnlyEdu.Service"
+              mapTo="OnlyEdu.Service.UserService1, OnlyEdu.Service" lifetime="transient">
+    </register>
+    <register type="OnlyEdu.Service.IUserService2, OnlyEdu.Service"
+              mapTo="OnlyEdu.Service.UserService2, OnlyEdu.Service" lifetime="transient">
+    </register>
+  </container>
+</containers>

@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlyEdu.Common", "OnlyEdu.Common\OnlyEdu.Common.csproj", "{341AA6D0-7E09-4B86-B9B2-782497A19B6D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlyEdu.Common.Web", "OnlyEdu.Common.Web\OnlyEdu.Common.Web.csproj", "{38CEAB40-0FCD-4249-9D68-F96766198046}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlyEdu.Common.Web.Authentication", "OnlyEdu.Common.Web.Authentication\OnlyEdu.Common.Web.Authentication.csproj", "{FBC88A8D-BF90-48BA-9816-0371E550310A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlyEdu.Common.Dapper", "OnlyEdu.Common.Dapper\OnlyEdu.Common.Dapper.csproj", "{39D402AC-F935-43E5-8063-7F9D88813094}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{341AA6D0-7E09-4B86-B9B2-782497A19B6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{341AA6D0-7E09-4B86-B9B2-782497A19B6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{341AA6D0-7E09-4B86-B9B2-782497A19B6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{341AA6D0-7E09-4B86-B9B2-782497A19B6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38CEAB40-0FCD-4249-9D68-F96766198046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38CEAB40-0FCD-4249-9D68-F96766198046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38CEAB40-0FCD-4249-9D68-F96766198046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38CEAB40-0FCD-4249-9D68-F96766198046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBC88A8D-BF90-48BA-9816-0371E550310A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBC88A8D-BF90-48BA-9816-0371E550310A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBC88A8D-BF90-48BA-9816-0371E550310A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBC88A8D-BF90-48BA-9816-0371E550310A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39D402AC-F935-43E5-8063-7F9D88813094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39D402AC-F935-43E5-8063-7F9D88813094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39D402AC-F935-43E5-8063-7F9D88813094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39D402AC-F935-43E5-8063-7F9D88813094}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA7B451C-3933-48D2-83A3-3AEBAF888F7E}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://azuredev/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = OnlyEdu.Common\\OnlyEdu.Common.csproj
+		SccProjectName1 = OnlyEdu.Common
+		SccLocalPath1 = OnlyEdu.Common
+		SccProjectUniqueName2 = OnlyEdu.Common.Web\\OnlyEdu.Common.Web.csproj
+		SccProjectName2 = OnlyEdu.Common.Web
+		SccLocalPath2 = OnlyEdu.Common.Web
+		SccProjectUniqueName3 = OnlyEdu.Common.Web.Authentication\\OnlyEdu.Common.Web.Authentication.csproj
+		SccProjectName3 = OnlyEdu.Common.Web.Authentication
+		SccLocalPath3 = OnlyEdu.Common.Web.Authentication
+		SccProjectUniqueName4 = OnlyEdu.Common.Dapper\\OnlyEdu.Common.Dapper.csproj
+		SccProjectName4 = OnlyEdu.Common.Dapper
+		SccLocalPath4 = OnlyEdu.Common.Dapper
+	EndGlobalSection
+EndGlobal

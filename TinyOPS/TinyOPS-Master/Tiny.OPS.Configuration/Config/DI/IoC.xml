@@ -1,0 +1,248 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<containers>
+  <!--Repository层-->
+  <container name="Repository">
+    <!--APP SYS-->
+    <register type="Tiny.OPS.Repository.IAPP_AppidRepository, Tiny.OPS.Repository"
+      mapTo="Tiny.OPS.Repository.APP_AppidRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IAPP_SysLogRepository, Tiny.OPS.Repository"
+     mapTo="Tiny.OPS.Repository.APP_SysLogRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IAPP_WhiteListRepository, Tiny.OPS.Repository"
+     mapTo="Tiny.OPS.Repository.APP_WhiteListRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.ISYS_InvokeLogRepository, Tiny.OPS.Repository"
+    mapTo="Tiny.OPS.Repository.SYS_InvokeLogRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.ISYS_DictionaryRepository, Tiny.OPS.Repository"
+    mapTo="Tiny.OPS.Repository.SYS_DictionaryRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+
+    <!--校管家-->
+    <register type="Tiny.OPS.Repository.ICampusRangeRepository, Tiny.OPS.Repository"
+   mapTo="Tiny.OPS.Repository.CampusRangeRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IProductClassRepository, Tiny.OPS.Repository"
+    mapTo="Tiny.OPS.Repository.ProductClassRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IProductCourseRepository, Tiny.OPS.Repository"
+    mapTo="Tiny.OPS.Repository.ProductCourseRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IProductItemTypeRepository, Tiny.OPS.Repository"
+   mapTo="Tiny.OPS.Repository.ProductItemTypeRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IProductSynchroHistoryRepository, Tiny.OPS.Repository"
+    mapTo="Tiny.OPS.Repository.ProductSynchroHistoryRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.ITeachTimeRepository, Tiny.OPS.Repository"
+    mapTo="Tiny.OPS.Repository.TeachTimeRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IXGJInterfaceConfigureRepository, Tiny.OPS.Repository"
+    mapTo="Tiny.OPS.Repository.XGJInterfaceConfigureRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IBasicDataRepository, Tiny.OPS.Repository"
+    mapTo="Tiny.OPS.Repository.BasicDataRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IT_POC_EcsThresholdRepository, Tiny.OPS.Repository"
+              mapTo="Tiny.OPS.Repository.T_POC_EcsThresholdRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+
+
+    <!--RLS-->
+    <register type="Tiny.OPS.Repository.IPermissionRepository, Tiny.OPS.Repository"
+              mapTo="Tiny.OPS.Repository.PermissionRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IRolePermissionRepository, Tiny.OPS.Repository"
+              mapTo="Tiny.OPS.Repository.RolePermissionRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IUserRoleRepository, Tiny.OPS.Repository"
+              mapTo="Tiny.OPS.Repository.UserRoleRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IUserRoleRangeRepository, Tiny.OPS.Repository"
+              mapTo="Tiny.OPS.Repository.UserRoleRangeRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+
+    <!--POC-->
+    <register type="Tiny.OPS.Repository.IT_POC_ProductRepository, Tiny.OPS.Repository"
+              mapTo="Tiny.OPS.Repository.T_POC_ProductRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IT_POC_BasicDataMapRepository, Tiny.OPS.Repository"
+              mapTo="Tiny.OPS.Repository.T_POC_BasicDataMapRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IT_POC_ProductTypeRepository, Tiny.OPS.Repository"
+              mapTo="Tiny.OPS.Repository.T_POC_ProductTypeRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IT_POC_ProductTypeMapRepository, Tiny.OPS.Repository"
+              mapTo="Tiny.OPS.Repository.T_POC_ProductTypeMapRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IT_POC_ExtractorDetailRepository, Tiny.OPS.Repository"
+             mapTo="Tiny.OPS.Repository.T_POC_ExtractorDetailRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.Repository.IT_POC_ExtractorRepository, Tiny.OPS.Repository"
+               mapTo="Tiny.OPS.Repository.T_POC_ExtractorRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+
+    <register type="Tiny.OPS.Repository.IT_POC_ExtractorQueryRepository, Tiny.OPS.Repository"
+                mapTo="Tiny.OPS.Repository.T_POC_ExtractorQueryRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>
+  </container>
+
+  <!--Service层-->
+  <container name="Service">
+    <register type="Tiny.OPS.DomainService.IAPP_AppidDomainService, Tiny.OPS.DomainService"
+              mapTo="Tiny.OPS.DomainService.APP_AppidDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.IAPP_SysLogDomainService, Tiny.OPS.DomainService"
+              mapTo="Tiny.OPS.DomainService.APP_SysLogDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.IAPP_WhiteListDomainService, Tiny.OPS.DomainService"
+              mapTo="Tiny.OPS.DomainService.APP_WhiteListDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.ISYS_InvokeLogDomainService, Tiny.OPS.DomainService"
+    mapTo="Tiny.OPS.DomainService.SYS_InvokeLogDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.ISYS_DictionaryDomainService, Tiny.OPS.DomainService"
+    mapTo="Tiny.OPS.DomainService.SYS_DictionaryDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+
+    <register type="Tiny.OPS.DomainService.IT_POC_ExtractorDetailDomainService, Tiny.OPS.DomainService"
+            mapTo="Tiny.OPS.DomainService.T_POC_ExtractorDetailDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+
+
+    <register type="Tiny.OPS.DomainService.IT_POC_ExtractorDomainService, Tiny.OPS.DomainService"
+            mapTo="Tiny.OPS.DomainService.T_POC_ExtractorDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+
+
+    <register type="Tiny.OPS.DomainService.IT_POC_ExtractorQueryDomainService, Tiny.OPS.DomainService"
+            mapTo="Tiny.OPS.DomainService.T_POC_ExtractorQueryDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+
+    <!--校管家-->
+    <register type="Tiny.OPS.DomainService.ICampusRangeDomainService, Tiny.OPS.DomainService"
+    mapTo="Tiny.OPS.DomainService.CampusRangeDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.IInterfaceConfigDomainService, Tiny.OPS.DomainService"
+    mapTo="Tiny.OPS.DomainService.InterfaceConfigDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.IProductClassDomainService, Tiny.OPS.DomainService"
+   mapTo="Tiny.OPS.DomainService.ProductClassDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.IProductCourseDomainService, Tiny.OPS.DomainService"
+   mapTo="Tiny.OPS.DomainService.ProductCourseDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.IProductItemTypeDomainService, Tiny.OPS.DomainService"
+   mapTo="Tiny.OPS.DomainService.ProductItemTypeDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.IProductSynchroHistoryDomainService, Tiny.OPS.DomainService"
+    mapTo="Tiny.OPS.DomainService.ProductSynchroHistoryDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.ITeachTimeDomainService, Tiny.OPS.DomainService"
+    mapTo="Tiny.OPS.DomainService.TeachTimeDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.IBasicDataDomainService, Tiny.OPS.DomainService"
+   mapTo="Tiny.OPS.DomainService.BasicDataDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.IT_POC_EcsThresholdDomainService, Tiny.OPS.DomainService"
+              mapTo="Tiny.OPS.DomainService.T_POC_EcsThresholdDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+
+    <!--Product_ITransform-->
+    <!--<register type="Tiny.OPS.DomainService.XGJProduct.ITransform, Tiny.OPS.DomainService" name="ClassList"
+              mapTo="Tiny.OPS.DomainService.XGJProduct.ClassTransform, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.XGJProduct.ITransform, Tiny.OPS.DomainService" name="ProductTypeList"
+              mapTo="Tiny.OPS.DomainService.XGJProduct.PruductTypeTransform, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>-->
+
+    <!--RLS-->
+    <register type="Tiny.OPS.DomainService.IPermissionDomainService, Tiny.OPS.DomainService"
+              mapTo="Tiny.OPS.DomainService.PermissionDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.IRolePermissionDomainService, Tiny.OPS.DomainService"
+              mapTo="Tiny.OPS.DomainService.RolePermissionDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.IUserRoleDomainService, Tiny.OPS.DomainService"
+              mapTo="Tiny.OPS.DomainService.UserRoleDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.IUserRoleRangeDomainService, Tiny.OPS.DomainService"
+              mapTo="Tiny.OPS.DomainService.UserRoleRangeDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+
+    <!--POC-->
+    <register type="Tiny.OPS.DomainService.IT_POC_ProductDomainService, Tiny.OPS.DomainService"
+              mapTo="Tiny.OPS.DomainService.T_POC_ProductDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.IT_POC_BasicDataMapDomainService, Tiny.OPS.DomainService"
+              mapTo="Tiny.OPS.DomainService.T_POC_BasicDataMapDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.IT_POC_ProductTypeDomainService, Tiny.OPS.DomainService"
+              mapTo="Tiny.OPS.DomainService.T_POC_ProductTypeDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.IT_POC_ProductTypeMapDomainService, Tiny.OPS.DomainService"
+              mapTo="Tiny.OPS.DomainService.T_POC_ProductTypeMapDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+  </container>
+
+  <!--Common层-->
+  <container name="Common">
+    <register type="Tiny.Common.Web.IMemoryCacheManager, Tiny.Common.Web"
+             mapTo="Tiny.Common.Web.MemoryCacheManager, Tiny.Common.Web" >
+      <lifetime type="singleton" />
+    </register>
+  </container>
+</containers>

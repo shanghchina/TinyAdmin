@@ -1,0 +1,1600 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OnlyEdu.Common</name>
+    </assembly>
+    <members>
+        <member name="T:OnlyEdu.Common.Bank.BankCard">
+            <summary>
+            银行卡信息
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Bank.BankCard.BankName">
+            <summary>
+            发卡行
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Bank.BankCard.CardName">
+            <summary>
+            发卡行代码
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Bank.BankCard.CardType">
+            <summary>
+            卡种名称
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Bank.BankCard.Length">
+            <summary>
+            卡号长度
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Bank.BankCard.Bin">
+            <summary>
+            BIN号 开头
+            </summary>
+        </member>
+        <member name="T:OnlyEdu.Common.DataQuery.DataPage">
+            <summary>
+            数据分页信息
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.DataQuery.DataPage.PageSizeField">
+            <summary>
+            分页页大小
+            0.不分页
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.DataQuery.DataPage.PageIndexField">
+            <summary>
+            显示页编码
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.DataQuery.DataPage.RowCountField">
+            <summary>
+            返回总信息量
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.DataQuery.DataPage.PageCountField">
+            <summary>
+            返回总页数
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.DataQuery.DataPage.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.DataQuery.DataPage.PageSize">
+            <summary>
+            分页页大小
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.DataQuery.DataPage.PageIndex">
+            <summary>
+            显示页编码
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.DataQuery.DataPage.RowCount">
+            <summary>
+            返回总信息量
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.DataQuery.DataPage.PageCount">
+            <summary>
+            返回总页数
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.DataQuery.DataPage.SortItems">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.DataQuery.DataPage.OrderBy">
+            <summary>
+            排序条件
+            </summary>
+            <exception cref="T:System.Exception"></exception>
+        </member>
+        <member name="M:OnlyEdu.Common.DataQuery.DataPage.CalculatePage">
+            <summary>
+            HDF
+            2014-7-22
+            计算页信息
+            </summary>
+        </member>
+        <member name="T:OnlyEdu.Common.DataQuery.SerachQuery">
+            <summary>
+            分页查询相关信息
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.DataQuery.SerachQuery.Page">
+            <summary>
+            分页信息
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.DataQuery.SerachQuery.Query">
+            <summary>
+            查询信息
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.DataQuery.SerachQuery.Sort">
+            <summary>
+            排序信息
+            </summary>
+        </member>
+        <member name="T:OnlyEdu.Common.DataQuery.QueryItem">
+            <summary>
+            查询条件
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.DataQuery.QueryItem.Match">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.DataQuery.QueryItem.Value">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.DataQuery.QueryItem.Key">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.DataQuery.QueryItem.Innerkey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OnlyEdu.Common.DataQuery.SortItem">
+            <summary>
+            排序要素
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.DataQuery.SortItem.SortField">
+            <summary>
+            排序字段
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.DataQuery.SortItem.SortOrder">
+            <summary>
+            排序Desc,Asc
+            </summary>
+        </member>
+        <member name="T:OnlyEdu.Common.Extensions.CommonEx">
+            <summary>
+            一些提示类异常
+            </summary>
+        </member>
+        <member name="T:OnlyEdu.Common.Extensions.AESExtensions">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OnlyEdu.Common.Extensions.AESExtensions.AESKey">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Extensions.AESExtensions.AESKey.Key">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Extensions.AESExtensions.AESKey.IV">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.AESExtensions.GetAesKey">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.AESExtensions.EncryptString(System.String,System.String,System.String)">
+            <summary>
+            加密内容
+            </summary>
+            <param name="plainText"></param>
+            <param name="keyText"></param>
+            <param name="ivText"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.AESExtensions.DecryptString(System.String,System.String,System.String)">
+            <summary>
+            解密内容
+            </summary>
+            <param name="cipherText"></param>
+            <param name="keyText"></param>
+            <param name="ivText"></param>
+            <returns></returns>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="T:OnlyEdu.Common.Extensions.ConfigExtension">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ConfigExtension.AppSetting(System.String)">
+            <summary>
+            Get a configuration setting for the specified key. Throws an exception if the
+            value can't be found. This is because either the config file can not be found
+            or an entry for the given key does not exist.
+            </summary>
+            <param name="key">The entry key.</param>
+            <returns>Value for the specified key.</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ConfigExtension.ConnectionString(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.DESExtensions.GetDesKey(System.Security.Cryptography.CipherMode)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.DESExtensions.DES_Decrypt_String(System.String,System.String,System.String)">
+            <summary>
+            2009-3-23
+            解密
+            </summary>
+            <param name="Value">待解密字符串</param>
+            <returns>解密结果</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.DESExtensions.DES_Decrypt_Byte(System.Byte[],System.Byte[],System.Byte[])">
+            <summary>
+            2013-06-06
+            解密
+            </summary>
+            <param name="value"></param>
+            <param name="key"></param>
+            <param name="iv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.DESExtensions.DES_Decrypt_String(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            2009-3-23
+            解密
+            </summary>
+            <param name="Value">待解密字符串</param>
+            <returns>解密结果</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.DESExtensions.DES_Decrypt_CBC_String(System.String,System.String,System.String)">
+            <summary>
+            2009-8-5
+            解密
+            </summary>
+            <param name="value"></param>
+            <param name="key"></param>
+            <param name="iv"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.DESExtensions.DES_Decrypt_String(System.String)">
+            <summary>
+            解密
+            </summary>
+            <param name="Value">待解密字符串</param>
+            <returns>解密结果</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.DESExtensions.DES_Encrypt_String(System.String,System.String,System.String)">
+            <summary>
+            2009-3-23
+            3DES加密
+            </summary>
+            <param name="Value">待加密字符串</param>
+            <returns>加密结果</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.DESExtensions.DES_Encrypt_Byte(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            2009-3-23
+            3DES加密
+            </summary>
+            <param name="Value">待加密字符串</param>
+            <returns>加密结果</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.DESExtensions.DES_Encrypt_CBC_String(System.String,System.String,System.String)">
+            <summary>
+            2009-8-5
+            3DES加密
+            </summary>
+            <param name="Value">待加密字符串</param>
+            <returns>加密结果</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.DESExtensions.DES_Encrypt_String(System.String)">
+            <summary>
+            3DES加密
+            </summary>
+            <param name="Value">待加密字符串</param>
+            <returns>加密结果</returns>
+        </member>
+        <member name="T:OnlyEdu.Common.Extensions.ExtensionBytes">
+            <summary>
+            2010-10-13
+            字节数组扩展
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ExtensionBytes.ToHexString(System.Byte[])">
+            <summary>
+            将字节数组转为16进制
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ExtensionBytes.ToUTF8String(System.Byte[])">
+            <summary>
+            2011-05-30
+            获得字节数据的可见字符表示
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ExtensionBytes.ToGB2312String(System.Byte[])">
+            <summary>
+            2011-05-30
+            获得字节数据的可见字符表示
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ExtensionBytes.Comparison(System.Byte[],System.Byte[])">
+            <summary>
+            比较两个字节数组是否相等
+            </summary>
+            <param name="source"></param>
+            <param name="byte2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ExtensionBytes.IndexOf(System.Byte[],System.Byte,System.Int32)">
+            <summary>
+            查找指令字节在数据中的第一个位置
+            </summary>
+            <param name="source"></param>
+            <param name="value"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ExtensionBytes.SubBytes(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            取字节级指定长度子串
+            </summary>
+            <param name="source"></param>
+            <param name="startIndex"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ExtensionBytes.LinkBytes(System.Byte[],System.Byte[])">
+            <summary>
+            链接两个字节数组
+            </summary>
+            <param name="source"></param>
+            <param name="byte2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ExtensionBytes.ToUInt32(System.Byte[],System.Int32)">
+            <summary>
+            //返回字节数组代表的整数数字，4个数组  
+            </summary>
+            <param name="bs"></param>
+            <param name="startIndex"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ExtensionBytes.ToUInt32(System.Byte[])">
+            <summary>
+            没有指定起始索引
+            </summary>
+            <param name="bs"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ExtensionBytes.ToBCD(System.Byte[])">
+            <summary>
+            按位转数字
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OnlyEdu.Common.Extensions.RSAExtension">
+            <summary>
+            非对称RSA加密类 可以参考
+            http://www.cnblogs.com/hhh/archive/2011/06/03/2070692.html
+            http://blog.csdn.net/zhilunchen/article/details/2943158
+            若是私匙加密 则需公钥解密
+            反正公钥加密 私匙来解密
+            需要BigInteger类来辅助
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Extensions.RSAExtension.DWKEYSIZE">
+            <summary>
+            RSA的容器 可以解密的源字符串长度为 DWKEYSIZE/8-11 
+            </summary>
+        </member>
+        <member name="T:OnlyEdu.Common.Extensions.RSAExtension.RSAKey">
+            <summary>
+            RSA加密的密匙结构  公钥和私匙
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.RSAExtension.GetRASKey">
+            <summary>
+            得到RSA的解谜的密匙对
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.RSAExtension.CheckSourceValidate(System.String)">
+            <summary>
+            检查明文的有效性 DWKEYSIZE/8-11 长度之内为有效 中英文都算一个字符
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.RSAExtension.ComponentKey(System.Byte[],System.Byte[])">
+            <summary>
+            组合成密匙字符串
+            </summary>
+            <param name="b1"></param>
+            <param name="b2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.RSAExtension.ResolveKey(System.String,System.Byte[]@,System.Byte[]@)">
+            <summary>
+            解析密匙
+            </summary>
+            <param name="key">密匙</param>
+            <param name="b1">RSA的相应参数1</param>
+            <param name="b2">RSA的相应参数2</param>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.RSAExtension.EncryptString(System.String,System.String)">
+            <summary>
+            字符串加密
+            </summary>
+            <param name="source">源字符串 明文</param>
+            <param name="key">密匙</param>
+            <returns>加密遇到错误将会返回原字符串</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.RSAExtension.DecryptString(System.String,System.String)">
+            <summary>
+            字符串解密
+            </summary>
+            <param name="encryptString">密文</param>
+            <param name="key">密钥</param>
+            <returns>遇到解密失败将会返回原字符串</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.RSAExtension.EncryptString(System.String,OnlyEdu.Common.Extensions.BigInteger,OnlyEdu.Common.Extensions.BigInteger)">
+            <summary>
+            用指定的密匙加密 
+            </summary>
+            <param name="source">明文</param>
+            <param name="d">可以是RSACryptoServiceProvider生成的D</param>
+            <param name="n">可以是RSACryptoServiceProvider生成的Modulus</param>
+            <returns>返回密文</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.RSAExtension.DecryptString(System.String,OnlyEdu.Common.Extensions.BigInteger,OnlyEdu.Common.Extensions.BigInteger)">
+            <summary>
+            用指定的密匙加密 
+            </summary>
+            <param name="source">密文</param>
+            <param name="e">可以是RSACryptoServiceProvider生成的Exponent</param>
+            <param name="n">可以是RSACryptoServiceProvider生成的Modulus</param>
+            <returns>返回明文</returns>
+        </member>
+        <member name="T:OnlyEdu.Common.Extensions.SecurityExtension">
+            <summary>
+            2010-8-30
+            安全处理
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.SecurityExtension.SHA1_Encrypt_String(System.String)">
+            <summary>
+            计算SHA1并返回Base64
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.SecurityExtension.MD5_Encrypt_String(System.String)">
+            <summary>
+            MD5加密
+            </summary>
+            <param name="Value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.SecurityExtension.MD5_Encrypt_String(System.Byte[])">
+            <summary>
+            2009-12-13
+            MD5加密
+            </summary>
+            <param name="buf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.SecurityExtension.MD5_Encrypt_Byte(System.Byte[])">
+            <summary>
+            2010-09-03
+            MD5签名
+            </summary>
+            <param name="buf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.SecurityExtension.MD5_ByteToStr(System.Byte[])">
+            <summary>
+            将MD5值转为16进制
+            </summary>
+            <param name="buf"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.SecurityExtension.MD5_StrToByte(System.String)">
+            <summary>
+            将16进制转回MD5
+            </summary>
+            <param name="value"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.SecurityExtension.GetMD5ChinaPayPriv1(System.String)">
+            <summary>
+            2009-5-8
+            获得网银商户私有域
+            </summary>
+            <param name="paymentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.SecurityExtension.GetEncodekey(System.String)">
+            <summary>
+            2010-09-10
+            获得随机密钥
+            </summary>
+            <param name="seed"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.SecurityExtension.CreateRandomKey(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="keyLen"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OnlyEdu.Common.Extensions.ValidContextExtension">
+            <summary>
+            ValidContext 扩展方法
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.SetNullHelper``1(``0,OnlyEdu.Common.Orm.Entity)">
+            <summary>
+            删除对象
+            </summary>
+            <param name="entity"></param>
+            <param name="setNullEntity">设置的空实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.ClearNavHelper``1(``0,OnlyEdu.Common.Orm.Entity)">
+            <summary>
+            清理导航属性 范型
+            </summary>
+            <param name="entity"></param>
+            <param name="clearEntity">被清除的实体</param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.Name(System.String,System.String)">
+            <summary>
+            指定名称
+            </summary>
+            <param name="s"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.Name(System.Object,System.String)">
+            <summary>
+            指定名称
+            </summary>
+            <param name="s"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.ValidEmpty(OnlyEdu.Common.ValidContext,System.String)">
+            <summary>
+            验证是否为空
+            </summary>
+            <param name="context"></param>
+            <param name="customerMsg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.ValidTimeEmpty(OnlyEdu.Common.ValidContext)">
+            <summary>
+            验证时间是否为空，是否有效,大于1900年
+            </summary>
+            <param name="context"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.ValidNumberDayu0(OnlyEdu.Common.ValidContext)">
+            <summary>
+            验证数值
+            验证需大于0的数字
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.ValidXiaoShuLength(OnlyEdu.Common.ValidContext,System.Int32)">
+            <summary>
+            验证小数个数
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.ValidBankCard(OnlyEdu.Common.ValidContext)">
+            <summary>
+            验证银行卡正确性
+            </summary>
+            <param name="context">验证上下文</param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.RegexZhenZhengShu(System.String)">
+            <summary>
+            验证正整数
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.RegexFuZhengShu(System.String)">
+            <summary>
+            验证负整数
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.RegexZhengShu(System.String)">
+            <summary>
+            验证整数
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.RegexFeiFuZhengShu(System.String)">
+            <summary>
+            验证非负整数
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.RegexFeiZhenZhengShu(System.String)">
+            <summary>
+            验证非正整数
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.RegexZhengDecimal(System.String)">
+            <summary>
+            验证正浮点数
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.RegexFuDecimal(System.String)">
+            <summary>
+            验证负浮点数
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.RegexXiaoShuLength(System.String,System.Int32)">
+            <summary>
+            验证两位小数
+            </summary>
+            <param name="number"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.ValidMaxLength(OnlyEdu.Common.ValidContext,System.Int32)">
+            <summary>
+            验证最大长度 默认50个长度
+            </summary>
+            <param name="context"></param>
+            <param name="maxLength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.ValidLength(OnlyEdu.Common.ValidContext,System.Int32)">
+            <summary>
+            验证指定长度
+            </summary>
+            <param name="context"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.ValidEmail(OnlyEdu.Common.ValidContext)">
+            <summary>
+            验证邮箱
+            </summary>
+            <param name="context"></param>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.ValidCardNo(OnlyEdu.Common.ValidContext)">
+            <summary>
+            验证身份证号码 支持15/18位带Xx
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.GetLength(System.String)">
+            <summary>
+            获取字符串长度。与string.Length不同的是，该方法将中文作 2 个字符计算。
+            </summary>
+            <param name="str">目标字符串</param>
+            <returns>结果字符串</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.ToBankCard(System.String)">
+            <summary>
+            获取银行卡信息
+            </summary>
+            <param name="bankCard">银行卡</param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.ValidBankCard(System.String)">
+            <summary>
+            获取银行卡信息
+            </summary>
+            <param name="bankCard">银行卡</param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.ValidContextExtension.ValidPassword(System.String)">
+            <summary>
+            密码复杂度验证
+            #必须包含数字
+            #必须包含小写或大写字母
+            #必须包含特殊符号
+            #至少8个字符，最多30个字符
+            </summary>
+            <param name="pwd"></param>
+            <returns>true:满足复杂度</returns>
+        </member>
+        <member name="T:OnlyEdu.Common.Extensions.CommonException.StringEmptyException">
+            <summary>
+            字符串空异常
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Extensions.CommonException.StringEmptyException.Field">
+            <summary>
+            字段
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Extensions.CommonException.StringEmptyException.FieldName">
+            <summary>
+            字段中文名称
+            </summary>
+        </member>
+        <member name="T:OnlyEdu.Common.Extensions.EnumDescription">
+            <summary>
+            2014-06-10
+            枚举扩展
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.EnumDescription.GetEnumDataTable(System.Type)">
+            <summary>
+            把结构转换成DataTable数据集,两个例分别为Name与Value,可通过本类的GetEnumDtValueField字段获取ByArk2009-2-12,16:40(星期四)
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.EnumDescription.GetEnumList(System.Type)">
+            <summary>
+            2014-8-7
+            获得枚举值列表
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.EnumDescription.ToEnumDescription(System.Object)">
+            <summary>
+            2009-2-6
+            取得枚举值描述信息
+            </summary>
+            <param name="e"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.EnumDescription.SetDrowTextShort(System.Data.DataRow,System.String,System.String,System.Type)">
+            <summary>
+            把枚举值设置到对应的列中2009-2-19,15:07(星期四)
+            </summary>
+            <param name="drow">要设置的Dr</param>
+            <param name="fieldName">取得值的列</param>
+            <param name="NewfieldName">枚举值存放列</param>
+            <param name="type">type</param>
+        </member>
+        <member name="T:OnlyEdu.Common.Extensions.StringExtension">
+            <summary>
+            2014-8-4
+            工作用户相关转换
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.StringExtension.ToWorkflowUsers(System.String)">
+            <summary>
+            转为工作流用户串
+            </summary>
+            <param name="users"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.StringExtension.ToSplitString(System.String)">
+             <summary>
+             HDF
+             2014-10-22
+            拆分字符串组
+             </summary>
+             <param name="source"></param>
+             <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.StringExtension.ToWorkflowPositons(System.String)">
+            <summary>
+            转为工作流职位串
+            </summary>
+            <param name="positons"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.StringExtension.ToWorkflowRoles(System.String)">
+            <summary>
+            转为工作流角色串
+            </summary>
+            <param name="roles"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.StringExtension.ToUserOrgCode(System.String)">
+            <summary>
+            2014-10-20
+            获得组织机构代码等级拆分组
+            </summary>
+            <param name="userOrgCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.StringExtension.ToWorkflowOrganization(System.String)">
+            <summary>
+            转为工作流组织串
+            </summary>
+            <param name="organization"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.StringExtension.ToBIdForWFSheet(System.String,System.DateTime,System.Int64)">
+            <summary>
+            2014-9-4
+            转换为工作流单据号
+            </summary>
+            <param name="eType"></param>
+            <param name="timcCreate"></param>
+            <param name="sheetId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.StringExtension.ToWorkflowLongDateString(System.DateTime)">
+            <summary>
+            2014-9-4
+            获得字符串日期时间
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.StringExtension.ToWorkflowDateString(System.DateTime)">
+            <summary>
+            2014-10-22
+            获得日期串
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.StringExtension.IsStrongPassword(System.String)">
+            <summary>
+            密码复杂度验证
+            #必须包含数字
+            #必须包含小写或大写字母
+            #必须包含特殊符号
+            #至少8个字符，最多30个字符
+            </summary>
+            <param name="pwd"></param>
+            <returns>true:满足复杂度</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.StringExtension.IsEmail(System.String)">
+            <summary>
+            是否邮箱地址
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Extensions.StringExtension.IsCardNo(System.String)">
+            <summary>
+            验证身份证号码
+            </summary>
+            <param name="cardno"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OnlyEdu.Common.FilerHelper">
+            <summary>
+            2011-05-23
+            操作指定目录下的文件类
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.FilerHelper.#ctor(System.String)">
+            <summary>
+            操作指定目录下的文件类
+            </summary>
+            <param name="startPath">目录</param>
+        </member>
+        <member name="M:OnlyEdu.Common.FilerHelper.SaveFile(System.String,System.String,System.String)">
+            <summary>
+            将字符串保存为文件
+            </summary>
+            <param name="path">路径</param>
+            <param name="txt">字符串</param>
+            <param name="encoding">编码</param>
+        </member>
+        <member name="M:OnlyEdu.Common.FilerHelper.SaveFile(System.String,System.String,System.String,System.IO.FileMode)">
+            <summary>
+            将字符串保存为文件
+            </summary>
+            <param name="path">路径</param>
+            <param name="txt">字符串</param>
+            <param name="encoding">编码</param>
+            <param name="fm"></param>
+        </member>
+        <member name="M:OnlyEdu.Common.FilerHelper.SaveFile(System.String,System.String)">
+            <summary>
+            将字符串保存为文件
+            </summary>
+            <param name="path">路径</param>
+            <param name="txt">字符串</param>
+        </member>
+        <member name="M:OnlyEdu.Common.FilerHelper.readFile(System.String)">
+            <summary>
+            读取指定路径的文件
+            </summary>
+            <param name="fromPath">路径</param>
+            <returns>文件内容</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.FilerHelper.DebugString(System.String,System.String)">
+            <summary>
+            写入调试信息
+            </summary>
+            <param name="ds"></param>
+            <param name="logPath"></param>
+        </member>
+        <member name="M:OnlyEdu.Common.FilerHelper.ReadFile(System.String,System.String)">
+            <summary>
+            读取指定路径的文件
+            </summary>
+            <param name="fromPath">路径</param>
+            <returns>文件内容</returns>
+            <param name="encoding">编码</param>
+        </member>
+        <member name="M:OnlyEdu.Common.FilerHelper.FintFilePath(System.String)">
+            <summary>
+            查找指定目录下所有为此名称的文件,找不到返回空字符串
+            </summary>
+            <param name="fileName">文件名</param>
+            <returns>路径,找不到返回空字符串</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.FilerHelper.FintFilePath(System.String,System.String)">
+            <summary>
+            查找指定目录下所有包含此名称的文件,找不到返回空字符串
+            </summary>
+            <param name="fileName">文件名</param>
+            <param name="extension">文件的扩展名如,要加点</param>
+            <returns>路径,找不到返回空字符串</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.FilerHelper.AllPaths(System.String[])">
+            <summary>
+            得到所有子目录
+            </summary>
+            <param name="dirs">目录集</param>
+        </member>
+        <member name="M:OnlyEdu.Common.FilerHelper.AllFiles(System.Collections.ArrayList)">
+            <summary>
+            得到目录下的所有文件
+            </summary>
+            <param name="allpaths">目录集</param>
+            <returns>路径</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.FilerHelper.GetAssemblyPath">
+            <summary>
+            获取Dll的运行路径
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.FilerHelper.pathCD(System.String)">
+            <summary>
+            得到父目录
+            </summary>
+            <param name="path">路径</param>
+            <returns>父目录</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.FilerHelper.pathCD(System.String,System.Int32)">
+            <summary>
+            得到父目录
+            </summary>
+            <param name="path">路径</param>
+            <param name="cdCount">cd的级数</param>
+            <returns>父目录</returns>
+        </member>
+        <member name="M:OnlyEdu.Common.FilerHelper.PathSeriesDifference(System.String,System.String)">
+            <summary>
+            得到两个目录的级数差
+            </summary>
+            <param name="path1">目录1</param>
+            <param name="path2">目录2</param>
+            <returns>../ 的组合</returns>
+        </member>
+        <member name="P:OnlyEdu.Common.FilerHelper.path">
+            <summary>
+            得到初始化的路径
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Json.JsonHelper.SerializeObject(System.Object)">
+            <summary>
+            将指定的对象序列化成Json
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Json.JsonHelper.DeserializeObject``1(System.String)">
+            <summary>
+            将指定的 JSON 数据反序列化成指定对象。
+            </summary>
+            <typeparam name="T">对象类型。</typeparam>
+            <param name="json">JSON 数据。</param>
+            <returns></returns>
+        </member>
+        <member name="T:OnlyEdu.Common.Orm.BaseColumn">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Orm.BaseColumn.TimeCreate">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Orm.BaseColumn.TimeUpdate">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Orm.BaseColumn.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OnlyEdu.Common.Orm.Entity">
+            <summary>
+            数据表公共字段列新项目放弃使用
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Orm.Entity._requestedHashCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Orm.Entity.Id">
+            <summary>
+            禁止手动修改(修改使用GenerateNewIdentity)
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Orm.Entity.UpdateDateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Orm.Entity.CreateDateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Orm.Entity.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Orm.Entity.IsTransient">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Orm.Entity.GenerateNewIdentity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Orm.Entity.ChangeCurrentIdentity(System.Guid)">
+            <summary>
+            
+            </summary>
+            <param name="identity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Orm.Entity.Equals(System.Object)">
+            <summary>
+            
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Orm.Entity.GetHashCode">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Orm.Entity.op_Equality(OnlyEdu.Common.Orm.Entity,OnlyEdu.Common.Orm.Entity)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Orm.Entity.op_Inequality(OnlyEdu.Common.Orm.Entity,OnlyEdu.Common.Orm.Entity)">
+            <summary>
+            
+            </summary>
+            <param name="left"></param>
+            <param name="right"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Orm.Entity.ClearNavForDataVersion">
+            <summary>
+            对导航属性进行清除
+            用于保存历史数据相关级联信息
+            有一级导航属性，但是没有更深层次的导航属性
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Orm.Entity.ClearNav">
+            <summary>
+            对清除所有的导航属性
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Orm.Entity.Clear">
+            <summary>
+            具体清除导航属性
+            置为NULL
+            </summary>
+        </member>
+        <member name="T:OnlyEdu.Common.Exceptions.OnlyException">
+            <summary>
+            昂立异常信息
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Exceptions.OnlyException.ExceptionID">
+            <summary>
+            异常编号
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Exceptions.OnlyException.ExceptionScope">
+            <summary>
+            异常范围 会进行LazyLoad
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Exceptions.OnlyException.IsThrow">
+            <summary>
+            是否抛出异常信息
+            默认抛出异常
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Exceptions.OnlyException.Mark">
+            <summary>
+            标记 Extend 
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.ConstUtil.NullSqlDateTime">
+            <summary>
+            2010-8-30
+            数据库空时间
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.ConstUtil.UserOrgGatherRolePermissionsInfo_All">
+            <summary>
+            2015-6-6
+            所有用户权限信息状态名称
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.ConstUtil.UserMenuHtml">
+            <summary>
+            2015-6-6
+            用户菜单
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.ConstUtil.CurrentUser">
+            <summary>
+            2015-6-6
+            当前用户
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.ConstUtil.CurrentReportInfo">
+            <summary>
+            2015-6-18
+            当前报表信息
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.ConstUtil.CurrentModuleInfoId">
+            <summary>
+            2015-6-18
+            当前权限点ID
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.ConstUtil.SplitString">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.ConstUtil.SplitChar">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.ConstUtil.Report_ID_Chart">
+            <summary>
+            报表类型标识字符
+            </summary>
+        </member>
+        <member name="T:OnlyEdu.Common.NumberToChinese">
+            <summary>
+            阿拉伯数字与中文数字转换
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.NumberToChinese.Go(System.String,System.Boolean,System.Boolean,System.Boolean)">
+            <summary> 将数字文本转换成大写
+            </summary>
+            <param name="number">数字文本</param>
+            <param name="isSimplified">是否只使用简体中文,默认:否</param>
+            <param name="isMoney">是否是金额模式(忽略小数点后3位,并加上单位"元,角,分或整"),否认:是</param>
+            <param name="veryBig">是否开启大数字文本模式(接受15位以上整数,及10位以上小数),否认:否</param>
+        </member>
+        <member name="T:OnlyEdu.Common.RequestContent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:OnlyEdu.Common.ResponseResult">
+            <summary>
+            响应结果类
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.ResponseResult.StatusCode">
+            <summary>
+            状态码
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.ResponseResult.StatusDescription">
+            <summary>
+            操作信息
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.ResponseResult.ExtendMessage">
+            <summary>
+            补充信息
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.ResponseResult.Data">
+            <summary>
+            返回数据
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.ResponseResult.DataPage">
+            <summary>
+            分页信息
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.ResponseResult.Default(System.String)">
+            <summary>
+            响应消息封装类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.ResponseResult.Succeed(System.String)">
+            <summary>
+            响应消息封装类
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.ResponseResult.UnSuccessful(System.String)">
+            <summary>
+            响应消息封装类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.ResponseResult.Parse(System.String)">
+            <summary>
+            解析返回结果中的状态标志位
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.ResponseResult.Deserialize(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OnlyEdu.Common.ResponseResult`1">
+            <summary>
+            响应消息类
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.ResponseResult`1.Data">
+            <summary>
+            业务实体
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.ResponseResult`1.DataPage">
+            <summary>
+            分页信息
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.ResponseResult`1.Default">
+            <summary>
+            响应消息封装类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.ResponseResult`1.Succeed(`0,OnlyEdu.Common.DataQuery.DataPage,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="t"></param>
+            <param name="dataPage"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.ResponseResult`1.UnSuccessful(System.String)">
+            <summary>
+            Http 响应消息封装类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.ResponseResult`1.Deserialize(System.String)">
+            <summary>
+            Http 响应消息反序列化类
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OnlyEdu.Common.Types.DataPageType">
+            <summary>
+            数据分页信息
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DataPageType.PageSizeField">
+            <summary>
+            分页页大小
+            0.不分页
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DataPageType.PageIndexField">
+            <summary>
+            显示页编码
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DataPageType.RowCountField">
+            <summary>
+            返回总信息量
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DataPageType.PageCountField">
+            <summary>
+            返回总页数
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Types.DataPageType.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Types.DataPageType.PageSize">
+            <summary>
+            分页页大小
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Types.DataPageType.PageIndex">
+            <summary>
+            显示页编码
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Types.DataPageType.RowCount">
+            <summary>
+            返回总信息量
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Types.DataPageType.PageCount">
+            <summary>
+            返回总页数
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Types.DataPageType.SortDirections">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Types.DataPageType.SortNames">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.Types.DataPageType.OrderBy">
+            <summary>
+            获得排序完整信息串
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Types.DataPageType.CalculatePage">
+            <summary>
+            HDF
+            2014-7-22
+            计算页信息
+            </summary>
+        </member>
+        <member name="T:OnlyEdu.Common.Types.DomainType">
+            <summary>
+            2016-07-08 modify
+            应用域
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.EMS">
+            <summary>
+            管理系统
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.HR">
+            <summary>
+            人事系统
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.PPS">
+            <summary>
+            项目计划
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.EFS">
+            <summary>
+            财务系统
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.Workflow">
+            <summary>
+            工作流系统
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.RLS">
+            <summary>
+            授权管理系统
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.DCS">
+            <summary>
+            数据中心系统
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.OnlyPortal">
+            <summary>
+            昂立门户
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.RPT">
+            <summary>
+            报表中心
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.EOS">
+            <summary>
+            运营系统
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.AMS">
+            <summary>
+            行政管理系统
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.OAM">
+            <summary>
+            运维管理系统
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.OPS">
+            <summary>
+            运营平台解决方案
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.ETS">
+            <summary>
+            发票中心
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.INV">
+            <summary>
+            发票中心
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.CWS">
+            <summary>
+            昂立运营工作台
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.DomainType.Partner">
+            <summary>
+            伙伴
+            </summary>
+        </member>
+        <member name="T:OnlyEdu.Common.Types.ReturnStateType">
+            <summary>
+            HDF
+            2014-7-8
+            返回状态值
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.ReturnStateType.Succeed">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.ReturnStateType.UnSuccessful">
+            <summary>
+            失败
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.ReturnStateType.Data_Check_Error">
+            <summary>
+            数据验证失败
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.ReturnStateType.Data_Check_MultipleProduction">
+            <summary>
+            数据重复
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.ReturnStateType.Data_Check_Use">
+            <summary>
+            数据正在使用
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.ReturnStateType.DataBase_Null">
+            <summary>
+            数据不存在
+            </summary>
+        </member>
+        <member name="T:OnlyEdu.Common.Types.RowStateType">
+            <summary>
+            行状态
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.RowStateType.Effectivity">
+            <summary>
+            有效
+            </summary>
+        </member>
+        <member name="F:OnlyEdu.Common.Types.RowStateType.Expiry">
+            <summary>
+            无效
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.ValidContext.Data">
+            <summary>
+            验证的数据
+            </summary>
+        </member>
+        <member name="P:OnlyEdu.Common.ValidContext.DataName">
+            <summary>
+            数据名称
+            </summary>
+        </member>
+        <member name="M:OnlyEdu.Common.Xml.XmlUtil.Load(System.Type,System.String)">
+            <summary>
+            反序列化
+            </summary>
+            <param name="type">对象类型</param>
+            <param name="filename">文件路径</param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlyEdu.Common.Xml.XmlUtil.Save(System.Object,System.String)">
+            <summary>
+            序列化
+            </summary>
+            <param name="obj">对象</param>
+            <param name="filename">文件路径</param>
+        </member>
+    </members>
+</doc>
