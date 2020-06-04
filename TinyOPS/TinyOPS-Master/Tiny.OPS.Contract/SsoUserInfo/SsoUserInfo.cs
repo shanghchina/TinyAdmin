@@ -34,79 +34,79 @@ namespace Tiny.OPS.Contract
     public class UserDictionary
     {
         /// <summary>
-        /// 昂立用户姓名
+        /// 集团用户姓名
         /// </summary>
         public string OnlyDisplayName { get; set; }
         /// <summary>
-        /// 昂立员工编号
+        /// 集团员工编号
         /// </summary>
         public string OnlyEmployeeNumber { get; set; }
         /// <summary>
-        /// 昂立最后修改时间
+        /// 集团最后修改时间
         /// </summary>
         public string OnlyLastModifyDate { get; set; }
         /// <summary>
-        /// 昂立用户手机号码
+        /// 集团用户手机号码
         /// </summary>
         public string OnlyMobile { get; set; }
         /// <summary>
-        /// 昂立一级组织事业部名称
+        /// 集团一级组织事业部名称
         /// </summary>
         public string OnlyLevelOneUserOrgName { get; set; }
         /// <summary>
-        /// 昂立用户所属全级组织名称
+        /// 集团用户所属全级组织名称
         /// </summary>
         public string OnlyUserOrgFullName { get; set; }
         /// <summary>
-        /// 昂立用户所属组织机构
+        /// 集团用户所属组织机构
         /// </summary>
         public string OnlyOrganization { get; set; }
         /// <summary>
-        /// 昂立用户手机号码
+        /// 集团用户手机号码
         /// </summary>
         public string OnlyTelephone { get; set; }
         /// <summary>
-        /// 昂立用户邮箱
+        /// 集团用户邮箱
         /// </summary>
         public string OnlyPersonalEmail { get; set; }
         /// <summary>
-        /// 昂立用户所属组织机构Guid
+        /// 集团用户所属组织机构Guid
         /// </summary>
         public Guid OnlyOrganizationId { get; set; }
         /// <summary>
-        /// 昂立用户职位guid
+        /// 集团用户职位guid
         /// </summary>
         public Guid OnlyPositionId { get; set; }
         /// <summary>
-        /// 昂立用户职位名称
+        /// 集团用户职位名称
         /// </summary>
         public string OnlyPositionName { get; set; }
         /// <summary>
-        /// 昂立用户职位模板guid
+        /// 集团用户职位模板guid
         /// </summary>
         public Guid OnlyPositionTemplateId { get; set; }
         /// <summary>
-        /// 昂立用户职位模板名称
+        /// 集团用户职位模板名称
         /// </summary>
         public string OnlyPositionTemplateName { get; set; }
         /// <summary>
-        /// 昂立用户Id
+        /// 集团用户Id
         /// </summary>
         public string OnlyUserID { get; set; }
         /// <summary>
-        /// 昂立用户guid
+        /// 集团用户guid
         /// </summary>
         public Guid OnlyUserGuid { get; set; }
         /// <summary>
-        /// 昂立用户性别
+        /// 集团用户性别
         /// </summary>
         public string OnlySex { get; set; }
         /// <summary>
-        /// 昂立用户更新时间
+        /// 集团用户更新时间
         /// </summary>
         public DateTime OnlyTimeUpdate { get; set; }
         /// <summary>
-        /// 昂立用户街道地址
+        /// 集团用户街道地址
         /// </summary>
         public string StreetAddress { get; set; }
         /// <summary>

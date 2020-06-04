@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-container">
-    产品中心首页
+    首页
   </div>
 </template>
 

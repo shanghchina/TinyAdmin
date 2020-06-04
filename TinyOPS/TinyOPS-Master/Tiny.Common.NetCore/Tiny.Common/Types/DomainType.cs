@@ -54,9 +54,9 @@ namespace Tiny.Common.Types
         DCS = 7000,
 
         /// <summary>
-        /// 昂立门户
+        /// 集团门户
         /// </summary>
-        [Description("昂立门户")]
+        [Description("集团门户")]
         OnlyPortal = 8000,
 
         /// <summary>
@@ -106,9 +106,9 @@ namespace Tiny.Common.Types
         [Description("发票中心")]
         INV = 13000,
         /// <summary>
-        /// 昂立运营工作台
+        /// 集团运营工作台
         /// </summary>
-        [Description("昂立运营工作台")]
+        [Description("集团运营工作台")]
         CWS = 14000,
         /// <summary>
         /// 伙伴

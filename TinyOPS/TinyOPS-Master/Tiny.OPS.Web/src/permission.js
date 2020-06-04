@@ -50,52 +50,52 @@ export function isExitPermissionPoint(permissionPoint) {
   return permissionPoints.indexOf(permissionPoint) > -1
 }
 
-var isRefresh = false
-router.beforeEach(async(to, from, next) => {
-  NProgress.start()
-  document.title = getPageTitle(to.meta.title)
-  var loginId = common.getUrlKey('LoginId')
-  if (loginId) {
-    setLoginId(loginId)
-    NProgress.done()
-  }
-  const hasLgoinId = getLoginId()
-  var access_token = store.state.user.userInfo.AccessToken
-  if (!isRefresh) {
-    if (hasLgoinId) {
-      if (access_token) {
-        // 动态添加菜单
-        addRoutes()
-        isRefresh = true
-        NProgress.done()
-        next({ ...to, replace: true })
-      } else {
-        // 获取用户信息
-        await store.dispatch('user/GetUserInfo', hasLgoinId)
-        // 动态添加菜单
-        addRoutes()
-        isRefresh = true
-        NProgress.done()
-        next({ ...to, replace: true })
-      }
-    } else {
-      window.location.href = `${(window).g.sso}?Realm=${(window).g.Realm}&ReturnUrl=${window.location.href}`
-    }
-  } else {
-    NProgress.done()
-    if (loginId) {
-      var href = document.location.origin + '/#' + to.path.toString()
-      if (to.query) {
-        href += '?'
-      }
-      for (var i in to.query) {
-        href += i.toString()
-        href += '=' + to.query[i]
-      }
-      window.location.href = href
-    }
-    await store.dispatch('user/GetUserInfo', hasLgoinId)
-    next()
-  }
-})
+// var isRefresh = false
+// router.beforeEach(async(to, from, next) => {
+//   NProgress.start()
+//   document.title = getPageTitle(to.meta.title)
+//   var loginId = '64853EE5-D4A1-4F6F-AD52-FF31C36DE032' // common.getUrlKey('LoginId')
+//   if (loginId) {
+//     setLoginId(loginId)
+//     NProgress.done()
+//   }
+//   const hasLgoinId = getLoginId()
+//   var access_token = store.state.user.userInfo.AccessToken
+//   if (!isRefresh) {
+//     if (hasLgoinId) {
+//       if (access_token) {
+//         // 动态添加菜单
+//         addRoutes()
+//         isRefresh = true
+//         NProgress.done()
+//         next({ ...to, replace: true })
+//       } else {
+//         // 获取用户信息
+//         await store.dispatch('user/GetUserInfo', hasLgoinId)
+//         // 动态添加菜单
+//         addRoutes()
+//         isRefresh = true
+//         NProgress.done()
+//         next({ ...to, replace: true })
+//       }
+//     } else {
+//       next({ path: '/login' }) // window.location.href = `${(window).g.sso}?Realm=${(window).g.Realm}&ReturnUrl=${window.location.href}`
+//     }
+//   } else {
+//     NProgress.done()
+//     if (loginId) {
+//       var href = document.location.origin + '/#' + to.path.toString()
+//       if (to.query) {
+//         href += '?'
+//       }
+//       for (var i in to.query) {
+//         href += i.toString()
+//         href += '=' + to.query[i]
+//       }
+//       window.location.href = href
+//     }
+//     await store.dispatch('user/GetUserInfo', hasLgoinId)
+//     next()
+//   }
+// })
 

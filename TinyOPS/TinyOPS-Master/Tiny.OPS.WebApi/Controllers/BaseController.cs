@@ -20,7 +20,6 @@ namespace Tiny.OPS.WebApi.Controllers
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="data"></param>
-        /// <param name="message"></param>
         /// <returns></returns>
         protected BaseResponseModel<T> ApiSuccessResult<T>(T data)
         {
@@ -29,7 +28,6 @@ namespace Tiny.OPS.WebApi.Controllers
         /// <summary>
         /// API规范返回值
         /// </summary>
-        /// <typeparam name="T"></typeparam>
         /// <param name="message"></param>
         /// <returns></returns>
         protected BaseResponseModel<string> ApiErrorResult(string message)
