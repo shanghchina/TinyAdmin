@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<!-- saved from url=(0080)file:///C:/Users/jianghua/AppData/Local/Temp/mume2019510-12380-16mpp95.krfi.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>API接口规范</title>
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///C:/Users/jianghua/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.4.1/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <center> API接口规范</center>
+<table>
+<thead>
+<tr>
+<th><strong>起草人</strong></th>
+<th></th>
+<th><strong>签发人</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 class="mume-header" id="%E4%BF%AE%E6%94%B9%E5%8E%86%E5%8F%B2"><strong>修改历史</strong></h4>
+
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th>作者</th>
+<th>版本</th>
+<th>修改内容及原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2016/4/15</td>
+<td></td>
+<td>V1.0</td>
+<td></td>
+</tr>
+<tr>
+<td>2019/5/20</td>
+<td></td>
+<td>V2.0</td>
+<td>明确及完善标准，并实施</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 class="mume-header" id="%E4%B8%80-%E7%9B%AE%E5%BD%95%E5%9C%B0%E5%9D%80%E8%A7%84%E8%8C%83">一  、目录地址规范</h2>
+
+<p>适用于所有系统</p>
+<h3 class="mume-header" id="11-%E5%8D%8F%E8%AE%AE">1.1. 协议</h3>
+
+<p>API与用户的通信协议，目前统一使用HTTP/HTTPS协议，确保交互数据的传输安全。</p>
+<h3 class="mume-header" id="12-%E5%9F%9F%E5%90%8D">1.2. 域名</h3>
+
+<p>Ø  应该尽量将API部署在专用域名之下。</p>
+<p>Ø  <strong>域名规范</strong>：<a href="http://api.app.domaintype.example.com/">http://api.app.domaintype.example.com</a></p>
+<p>Øapp为应用名称，domaintype为统一应用域</p>
+<h3 class="mume-header" id="13-%E8%B7%AF%E5%BE%84%E8%A7%84%E5%88%99">1.3. 路径规则</h3>
+
+<p>Ø  <strong>网关路由</strong>：<a href="http://api/">http://api</a>. <a href="http://example.com/domaintype/%E6%A8%A1%E5%9D%97%E5%90%8D%E7%A7%B0/%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95">example.com/domaintype/模块名称/操作方法</a></p>
+<p>Ø  <strong>应用路由</strong>：<a href="http://api.app.domaintype.example.com/%E6%A8%A1%E5%9D%97%E5%90%8D%E7%A7%B0/%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95">http://api.app.domaintype.example.com/模块名称/操作方法</a></p>
+<p>举例来说，权限系统获用户信息模块获取用户，则它的路径应该设计成下面这样。</p>
+<p><a href="http://api.rls.dev.com/Users/Get_UserList">http://api.rls.dev.com/Users/Get_UserList</a></p>
+<h2 class="mume-header" id="%E4%BA%8C-%E6%8E%A5%E5%8F%A3%E8%AE%A4%E8%AF%81%E8%A7%84%E8%8C%83">二  、接口认证规范</h2>
+
+<p><em>安全认证方式需要可配置供业务系统配置，需要在开发方案中明确。</em></p>
+<h3 class="mume-header" id="21-%E5%9F%BA%E4%BA%8Eip%E7%99%BD%E5%90%8D%E5%8D%95%E8%AE%A4%E8%AF%81">2.1、基于IP白名单认证</h3>
+
+<p>Ø  适用于：服务端对服务端通信</p>
+<p>Ø  白名单+黑名单验证IP,不满足条件直接返回异常，减少压力</p>
+<h3 class="mume-header" id="22-%E5%9F%BA%E4%BA%8E%E7%A7%98%E9%92%A5%E7%AD%BE%E5%90%8D%E8%AE%A4%E8%AF%81">2.2、基于秘钥签名认证</h3>
+
+<p>Ø  适用所有应用=&gt;应用范围。</p>
+<p>Ø  所有应用请求及反馈需签名，并验证。</p>
+<p>Ø  <strong>签名规则</strong>：大写MD5(AppId+Timestamp+Json+SecrectKey)</p>
+<p>由服务端统一颁发APPID与SecretKey给客户端，客户端每次请求接口需要根据签名规则进行签名，并将签名放入Http请求Header中，对于客户端要求妥善保管私有的ID与秘钥，建议加密此类信息再存储；防止数据被篡改。</p>
+<p>响应总时间=2次加密时间+响应时间。</p>
+<p>Ø需人工干预刷新 SecertKey，周期1季度。</p>
+<p>Ø请求/响应内容安全（可选）：根据固定的（需人工干预刷新，周期1季度）加密密钥对请求/响应用的内容加解密。</p>
+<h3 class="mume-header" id="23-%E5%9F%BA%E4%BA%8E%E5%AE%89%E5%85%A8%E4%BB%A4%E7%89%8C%E8%AE%A4%E8%AF%81">2.3、基于安全令牌认证</h3>
+
+<p>Ø  适用于多用户=&gt;应用级别</p>
+<p>Ø  采用安全令牌Token+签名认证，模式API登录获取安全令牌，拿安全令牌访问对应接口，方便接口认证和鉴权，Token发送时放入Header中；</p>
+<p>Ø流程表示为：</p>
+<p><strong>登录&gt;返回安全令牌=&gt;客户端存储令牌=&gt;使用令牌调用其它接口</strong></p>
+<p>服务端作为特殊的用户，登录后返回Token、加密秘钥与IV(可选配置)等信息</p>
+<p>用户登录直接增加返回安全令牌，应用使用用户的令牌访问接口</p>
+<p>Ø  请求/响应内容安全（可选）：根据安全令牌同步动态的加密密钥对请求/响应用的内容加解密。</p>
+<h2 class="mume-header" id="%E4%B8%89-%E6%8E%A5%E5%8F%A3%E6%96%87%E6%A1%A3%E8%A7%84%E8%8C%83">三、 接口文档规范</h2>
+
+<h3 class="mume-header" id="31-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%96%87%E6%A1%A3%E7%BB%9F%E4%B8%80%E5%BC%95%E7%94%A8swagger">3.1、自动化文档统一引用Swagger</h3>
+
+<p>Ø  源代码层面统一引用Swagger</p>
+<p>Ø  提供统一路由给用户、注意接口权限配置</p>
+<p>Ø  自动文档UI统一地址：<a href="http://api.app.domaintype.example.com/swagger">http://api.app.domaintype.example.com/swagger</a></p>
+<p>Ø  文档中应用包括明确的接口应用场景描述、相对地址、请求类型、编码类型、请求参数说明及示例、反馈内容及示例、状态说明。<br>
+Ø 文档检查将做为研发计划的的一个工作项，由项目技术负责人检查。</p>
+<h2 class="mume-header" id="%E5%9B%9B-%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E8%A7%84%E8%8C%83">四、数据传输规范</h2>
+
+<h3 class="mume-header" id="41-%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E6%A0%BC%E5%BC%8F">4.1、数据传输格式</h3>
+
+<p>非特殊接口，参数与返回结果统一使用：</p>
+<p>Ø  Json作为传输数据方式</p>
+<p>Ø  Post作为主要调用接口方式</p>
+<p>Ø  编码方式统一使用Utf-8</p>
+<h3 class="mume-header" id="42-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">4.2、数据结构</h3>
+
+<p>规范数据结果集；接口返回的结果内容除了要返回业务数据外,还得返回处理状态，数据格式统一规范定义为:</p>
+<p><strong>数据头(描述数据信息)</strong></p>
+<p><strong>------------------------</strong></p>
+<p><strong>数据体(业务数据)</strong></p>
+<h4 class="mume-header" id="421-%E8%AF%B7%E6%B1%82%E8%BF%94%E5%9B%9E%E6%8E%A5%E5%8F%A3http-header">4.2.1 请求/返回接口HTTP Header</h4>
+
+<p>公共头部：所有调用API接口需按如下标准添加头部消息。</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AppId</td>
+<td>是</td>
+<td>String</td>
+<td>后台统一分配的APPID</td>
+<td></td>
+</tr>
+<tr>
+<td>Token</td>
+<td>是</td>
+<td>String</td>
+<td>动态令牌</td>
+<td>使用自有的appid和秘钥通过令牌接口获取</td>
+</tr>
+<tr>
+<td>Timestamp</td>
+<td>是</td>
+<td>String</td>
+<td>时间戳</td>
+<td>发送请求的时间，格式"yyyy-MM-dd   HH:mm:ss"   例如：2014-07-24   03:07:50</td>
+</tr>
+<tr>
+<td>TransactionID</td>
+<td>是</td>
+<td>String</td>
+<td>消息流水号</td>
+<td>消息流水号。yyyyMMddHHmmss+4位顺序号</td>
+</tr>
+<tr>
+<td>Sign</td>
+<td>是</td>
+<td>String</td>
+<td>签名，</td>
+<td>规则:大写MD5(AppId+Timestamp+TransactionID+Json+SecrectKey)</td>
+</tr>
+<tr>
+<td>Version</td>
+<td>是</td>
+<td>String</td>
+<td>版本号</td>
+<td>示例：1.0</td>
+</tr>
+</tbody>
+</table>
+<h4 class="mume-header" id="422-%E8%AF%B7%E6%B1%82%E6%8E%A5%E5%8F%A3%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">4.2.2 请求接口数据结构</h4>
+
+<p>Ø 整体传输仍然使用json格式，直接接口请求实体 。<br>
+Ø 如对APPID配置了信息加密，请求消息体为(Json)加密。</p>
+<h4 class="mume-header" id="423%E6%8E%A5%E5%8F%A3%E8%BF%94%E5%9B%9E%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">4.2.3接口返回数据结构</h4>
+
+<p>整体传输仍然使用json格式，包含下面必选：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code</td>
+<td>是</td>
+<td>String</td>
+<td>接口是否调用成功状态码</td>
+<td>0成功，-1未知错误，其他状态码根据系统定义</td>
+</tr>
+<tr>
+<td>Message</td>
+<td>是</td>
+<td>String</td>
+<td>失败消息/成功附加消息</td>
+<td></td>
+</tr>
+<tr>
+<td>Data</td>
+<td>是</td>
+<td>String</td>
+<td>具体的业务数据</td>
+<td>统一json格式</td>
+</tr>
+</tbody>
+</table>
+<p>示例数据：</p>
+<pre data-role="codeBlock" data-info="json" class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"Code"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+    <span class="token property">"Message"</span><span class="token operator">:</span> <span class="token string">"OK"</span><span class="token punctuation">,</span>
+    <span class="token property">"Data"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><h3 class="mume-header" id="43-%E8%B7%A8%E5%9F%9F%E8%AE%BF%E9%97%AE">4.3、跨域访问</h3>
+
+<p>4.3.1、同域跳转方式</p>
+<p>跨域本质是浏览器安全机制的拦截，所以可以以本系统做跳板，apiurl、请求json作为参数，在本系统内获取数据后返回</p>
+<p>4.3.2、基于Access-Control-Allow-Origin原理</p>
+<p>.Net应用统一使用Microsoft.AspNet.WebApi.Cors包。</p>
+<h2 class="mume-header" id="%E4%BA%94-%E6%8E%A5%E5%8F%A3%E6%97%A5%E5%BF%97%E8%A7%84%E8%8C%83">五、接口日志规范</h2>
+
+<h3 class="mume-header" id="51-%E6%9C%AC%E5%9C%B0%E6%96%87%E6%9C%AC%E6%97%A5%E5%BF%97%E8%BE%93%E5%87%BA">5.1、本地文本日志输出</h3>
+
+<p>Ø  统一使用Log4Net记录</p>
+<p>Ø  记录内容包括：时间、应用域、应用名称、模块名称、请求/应答头（包括了身份信息）、对象、方法、日志级别类型、日志内容（日志内容需统一格式）</p>
+<p>示例日志内容：</p>
+<pre data-role="codeBlock" data-info="json" class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"TransactionID"</span><span class="token operator">:</span> <span class="token string">"201905301419010001"</span><span class="token punctuation">,</span>
+    <span class="token property">"LogTime"</span><span class="token operator">:</span> <span class="token string">"yyyy-MM-dd HH:mm:ss"</span><span class="token punctuation">,</span>
+    <span class="token property">"DomainTypeId"</span><span class="token operator">:</span> <span class="token number">1000</span><span class="token punctuation">,</span>
+    <span class="token property">"ApplicationName"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token property">"Header"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token property">"AppId"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"Token"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"Timestamp"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"Sign"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+        <span class="token property">"Version"</span><span class="token operator">:</span> <span class="token string">""</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">"Ojbect"</span><span class="token operator">:</span> <span class="token string">"日志记录所在命名空间明细"</span><span class="token punctuation">,</span>
+    <span class="token property">"Method "</span><span class="token operator">:</span> <span class="token string">"日志记录所在方法"</span><span class="token punctuation">,</span>
+    <span class="token property">"Loglevel"</span><span class="token operator">:</span> <span class="token string">"Fatal/Error/Warn/Info/Debug"</span><span class="token punctuation">,</span>
+    <span class="token property">"IP"</span><span class="token operator">:</span> <span class="token string">"127.0.0.1"</span><span class="token punctuation">,</span>
+    <span class="token property">"URI"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span>
+    <span class="token property">"LogData"</span><span class="token operator">:</span> <span class="token string">""</span>
+<span class="token punctuation">}</span>
+</pre><p>示例日志内容字段说明:</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>类型</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TransactionID</td>
+<td>String</td>
+<td>消息流水号。yyyyMMddHHmmss+4位顺序号</td>
+<td></td>
+</tr>
+<tr>
+<td>LogTime</td>
+<td>datetime</td>
+<td>yyyy-MM-dd HH:mm:ss</td>
+<td></td>
+</tr>
+<tr>
+<td>DomainTypeId</td>
+<td>int</td>
+<td>统一应用域ID</td>
+<td></td>
+</tr>
+<tr>
+<td>ApplicationName</td>
+<td>String</td>
+<td>应用名称(.net解决方案中的项目名称)</td>
+<td></td>
+</tr>
+<tr>
+<td>Ojbect</td>
+<td>String</td>
+<td>日志记录所在命名空间明细</td>
+<td></td>
+</tr>
+<tr>
+<td>Method</td>
+<td>String</td>
+<td>日志记录所在方法</td>
+<td></td>
+</tr>
+<tr>
+<td>Loglevel</td>
+<td>int</td>
+<td>1000.Fatal  2000.Error  3000.Warn <a href="http://4000.info/">4000.Info</a>  5000.Debug</td>
+<td></td>
+</tr>
+<tr>
+<td>IP</td>
+<td>String</td>
+<td>请求用户IP</td>
+<td></td>
+</tr>
+<tr>
+<td>URI</td>
+<td>String</td>
+<td>请求地址</td>
+<td></td>
+</tr>
+<tr>
+<td>LogData</td>
+<td>String</td>
+<td>日志内容</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Ø  至少要在接口方法入口Info记录请求内容，如非 json 内容则转为 json 记录；</p>
+<p>Ø  至少要在接口方法返回结果前Info记录反馈内容；</p>
+<p>Ø  至少要在接口方法中捕获全局异常</p>
+<h3 class="mume-header" id="52-kafka%E6%B6%88%E6%81%AF%E8%BE%93%E5%87%BA">5.2、Kafka消息输出</h3>
+
+<p>Ø  基于Log4net上，将日志消息输出到Kafka队列上。</p>
+<p>Ø  基于ELK建立日志系统。</p>
+<h2 class="mume-header" id="%E5%85%AD-%E6%8E%A5%E5%8F%A3%E6%B4%BB%E8%B7%83%E6%A3%80%E6%9F%A5%E8%A7%84%E8%8C%83">六、接口活跃检查规范</h2>
+
+<h3 class="mume-header" id="61-%E6%B4%BB%E8%B7%83%E6%8E%A5%E5%8F%A3%E7%9B%B8%E5%AF%B9%E5%9C%B0%E5%9D%80">6.1、活跃接口相对地址</h3>
+
+<p><a href="http://api.app.domaintype.example.com/lively/test">http://api.app.domaintype.example.com/lively/test</a></p>
+<h3 class="mume-header" id="62-%E6%B4%BB%E8%B7%83%E6%8E%A5%E5%8F%A3%E5%8A%9F%E8%83%BD%E5%AE%9A%E4%B9%89">6.2、活跃接口功能定义</h3>
+
+<p>Ø 能够正确返回结果</p>
+<p>Ø 能够正确读写文件</p>
+<p>Ø 能够正确读写数据库</p>
+<p>Ø使用服务端验证</p>
+<p>返回结果说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数名称</th>
+<th>必选</th>
+<th>类型</th>
+<th>说明</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code</td>
+<td>是</td>
+<td>String</td>
+<td>接口是否调用成功状态码</td>
+<td>0成功，-1未知错误，其他状态码根据系统定义</td>
+</tr>
+<tr>
+<td>Message</td>
+<td>是</td>
+<td>String</td>
+<td>失败消息/成功附加消息</td>
+<td></td>
+</tr>
+<tr>
+<td>Data</td>
+<td>是</td>
+<td>String</td>
+<td>具体的业务数据</td>
+<td>统一json格式</td>
+</tr>
+</tbody>
+</table>
+<p>示例返回数据：</p>
+<pre data-role="codeBlock" data-info="json" class="language-json"><span class="token punctuation">{</span>
+    <span class="token property">"Code"</span><span class="token operator">:</span> <span class="token string">"0"</span><span class="token punctuation">,</span>
+    <span class="token property">"Message"</span><span class="token operator">:</span> <span class="token string">"OK"</span><span class="token punctuation">,</span>
+    <span class="token property">"Data"</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><h2 class="mume-header" id="%E4%B8%83-%E7%BB%9F%E4%B8%80%E7%8A%B6%E6%80%81%E7%A0%81">七、统一状态码</h2>
+
+<p>应用系统可维护自己的状态码，统一状态码则为：DomainTypeId_应用系统状态码。</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>成功</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>未知错误</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  </body></html>

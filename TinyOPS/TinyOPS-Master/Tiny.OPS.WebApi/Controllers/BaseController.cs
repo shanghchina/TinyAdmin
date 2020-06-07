@@ -25,6 +25,7 @@ namespace Tiny.OPS.WebApi.Controllers
         {
             return new BaseResponseModel<T>() { Code = "0", Message = "操作成功", Data = data };
         }
+
         /// <summary>
         /// API规范返回值
         /// </summary>
@@ -33,6 +34,17 @@ namespace Tiny.OPS.WebApi.Controllers
         protected BaseResponseModel<string> ApiErrorResult(string message)
         {
             return new BaseResponseModel<string>() { Code = "-1", Message = message, Data = "" };
+        }
+
+
+        /// <summary>
+        /// 401错误，比如token过期，登录错误
+        /// </summary>
+        /// <param name="message"></param>
+        /// <returns></returns>
+        protected BaseResponseModel<string> ApiError401(string message)
+        {
+            return new BaseResponseModel<string>() { Code = "401", Message = message, Data = "" };
         }
 
         /// <summary>

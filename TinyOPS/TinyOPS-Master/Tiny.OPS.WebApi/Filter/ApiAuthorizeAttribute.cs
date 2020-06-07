@@ -16,6 +16,10 @@ using System.Net;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Text;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using Microsoft.IdentityModel.Tokens;
 
 namespace Tiny.OPS.WebApi.Filter
 {
@@ -227,9 +231,10 @@ namespace Tiny.OPS.WebApi.Filter
             string parameter = string.Format("appId：{0}token：{1}timestamp：{2}sign：{3}", appId, token, timestamp, sign);
             var resultInfo = TokenVerify(token);
             var convertResultInfo = JsonConvert.DeserializeObject<dynamic>(resultInfo);
-            if ((string)convertResultInfo.code == "0")
+            if ((string)convertResultInfo.Code == "0")
             {
-                secrectKey = convertResultInfo.resultinfo.secrect_key;
+                //secrectKey = convertResultInfo.resultinfo.secrect_key;
+                secrectKey = convertResultInfo.Data.secrect_key;
             }
 
             if (string.IsNullOrEmpty(secrectKey))
@@ -259,8 +264,7 @@ namespace Tiny.OPS.WebApi.Filter
         /// <returns></returns>
         private string TokenVerify(string accessToken)
         {
-
-            var verifyUrl = ConfigVal.GwUrl + "api/OAuth2Token/Verify";
+            //var verifyUrl = ConfigVal.GwUrl + "api/OAuth2Token/Verify";
             var tokenInfo = new
             {
                 appid = ConfigVal.Appid,
@@ -270,9 +274,23 @@ namespace Tiny.OPS.WebApi.Filter
             var requestJson = Newtonsoft.Json.JsonConvert.SerializeObject(tokenInfo);
             HttpContent content = new StringContent(requestJson);
             content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
-            var returnJson = new HttpClient().PostAsync(verifyUrl, content).Result;
-            return returnJson.Content.ReadAsStringAsync().Result;
+            //var returnJson = new HttpClient().PostAsync(verifyUrl, content).Result;
+            var returnJson = GetTokenVerify(JsonConvert.DeserializeObject<TokenVerifyRequest>(requestJson));
+            // return returnJson.Content.ReadAsStringAsync().Result;
+            return JsonConvert.SerializeObject(returnJson);
 
+        }
+
+        /// <summary>
+        /// rls中的 OAuth2Token/Verify TokenVerifyRequest
+        /// </summary>
+        /// <param name="tokenVerifyRequest"></param>
+        /// <returns></returns>
+        private string GetTokenVerify(TokenVerifyRequest tokenVerifyRequest)
+        {
+            //BaseResponseModel<string> response = new BaseResponseModel<string> { Code = "0", Data = tokenVerifyRequest };
+            BaseResponseModel<TokenVerifyRequest> response = new BaseResponseModel<TokenVerifyRequest>() { Code = "0", Message = "操作成功", Data = tokenVerifyRequest };
+            return JsonConvert.SerializeObject(response); ;
         }
 
     }

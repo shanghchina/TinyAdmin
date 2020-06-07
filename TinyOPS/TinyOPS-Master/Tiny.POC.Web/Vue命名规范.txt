@@ -1,0 +1,16 @@
+﻿事业部产品池	ext_product_pool
+事业部产品池-基础参数	页面	ext_basicdata
+事业部产品池-产品分类	页面	ext_productitemtype
+事业部产品池-课程管理	页面	ext_productcourse
+事业部产品池-班级管理	页面	ext_productclass
+事业部产品池-产品提取器	页面	poc_extractor
+
+产品管理		poc_product_manage
+产品管理-产品分类管理	页面	poc_producttype
+产品管理-产品管理		页面	poc_productcourse
+
+系统设置		poc_system_config
+系统设置-基础参数设置	页面	poc_basicdata
+系统设置-产品分类映射设置	页面	poc_producttypemapping
+系统设置-基础参数映射	页面	poc_basicdatamapping
+系统设置-后台维护		页面	poc_systemsetup

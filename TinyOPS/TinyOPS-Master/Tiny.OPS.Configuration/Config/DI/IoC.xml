@@ -111,6 +111,11 @@
                 mapTo="Tiny.OPS.Repository.T_POC_ExtractorQueryRepository, Tiny.OPS.Repository" >
       <lifetime type="singleton" />
     </register>
+    <!--tiny-->
+    <register type="Tiny.OPS.Repository.IT_Sys_UserRepository, Tiny.OPS.Repository"
+                mapTo="Tiny.OPS.Repository.T_Sys_UserRepository, Tiny.OPS.Repository" >
+      <lifetime type="singleton" />
+    </register>    
   </container>
 
   <!--Service层-->
@@ -234,6 +239,10 @@
     </register>
     <register type="Tiny.OPS.DomainService.IT_POC_ProductTypeMapDomainService, Tiny.OPS.DomainService"
               mapTo="Tiny.OPS.DomainService.T_POC_ProductTypeMapDomainService, Tiny.OPS.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="Tiny.OPS.DomainService.IT_Sys_UserDomainService, Tiny.OPS.DomainService"
+              mapTo="Tiny.OPS.DomainService.T_Sys_UserDomainService, Tiny.OPS.DomainService" >
       <lifetime type="singleton" />
     </register>
   </container>
