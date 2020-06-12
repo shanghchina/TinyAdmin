@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ToolManage\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\TinyEdu.Util\TinyEdu.IdGenerator\TinyEdu.IdGenerator.csproj" />
+    <ProjectReference Include="..\..\TinyEdu.Util\TinyEdu.Util\TinyEdu.Util.csproj" />
+    <ProjectReference Include="..\..\TinyEdu.Web\TinyEdu.Web.Code\TinyEdu.Web.Code.csproj" />
+  </ItemGroup>
+
+</Project>

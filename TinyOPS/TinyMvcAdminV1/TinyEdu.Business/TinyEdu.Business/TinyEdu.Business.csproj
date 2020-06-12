@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ToolManage\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\TinyEdu.Entity\TinyEdu.Entity\TinyEdu.Entity.csproj" />
+    <ProjectReference Include="..\..\TinyEdu.Entity\TinyEdu.Enum\TinyEdu.Enum.csproj" />
+    <ProjectReference Include="..\..\TinyEdu.Util\TinyEdu.CodeGenerator\TinyEdu.CodeGenerator.csproj" />
+    <ProjectReference Include="..\TinyEdu.Business.Cache\TinyEdu.Business.Cache.csproj" />
+    <ProjectReference Include="..\TinyEdu.Service\TinyEdu.Service.csproj" />
+  </ItemGroup>
+
+</Project>
