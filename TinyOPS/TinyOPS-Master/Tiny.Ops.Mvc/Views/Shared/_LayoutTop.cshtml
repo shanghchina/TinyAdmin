@@ -115,9 +115,15 @@
 
 
             <li>
-                <a href="login.html">
+                @*<a href="login.html">
                     <i class="fa fa-sign-out"></i> Log out
-                </a>
+                </a>*@
+                @*<a href='@Url.Content("~/Login/Logout")'>
+                    <i class="fa fa-sign-out"></i> Log out
+                </a>*@
+                <form class="fa fa-sign-out" asp-controller="Account" asp-action="Logout">
+                    <button type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+                </form>
             </li>
             <li>
                 <a class="right-sidebar-toggle">

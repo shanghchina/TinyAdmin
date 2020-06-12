@@ -12,4 +12,12 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
 
+
+  <ItemGroup>
+    <ProjectReference Include="..\Tiny.OPS.Common.Web\Tiny.OPS.Common.Web.csproj" />
+    <ProjectReference Include="..\Tiny.OPS.Configuration\Tiny.OPS.Configuration.csproj" />
+    <ProjectReference Include="..\Tiny.OPS.DomainService\Tiny.OPS.DomainService.csproj" />
+    <ProjectReference Include="..\Tiny.OPS.Domain\Tiny.OPS.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

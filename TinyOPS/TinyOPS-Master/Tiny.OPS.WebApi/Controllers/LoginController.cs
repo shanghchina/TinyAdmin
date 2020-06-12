@@ -26,6 +26,36 @@ namespace Tiny.OPS.WebApi.Controllers
         private IT_Sys_UserDomainService domainService => IoC.Resolve<IT_Sys_UserDomainService>();
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="authUser"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [NoCheck]
+        public BaseResponse CheckUserAccount([FromBody]VmAuthUser authUser)
+        {
+            try
+            {
+                if (authUser.password == "123456")
+                {
+                    var result = new Rsp_Auth_User();
+                    result.user = domainService.GetSysUserByName(authUser.username);
+                    result.token = GetJwtToken(authUser.username);
+                    return ApiSuccessResult(result);
+                }
+                else
+                {
+                    return ApiError401("账号密码错误，请重新输入");
+                }
+            }
+            catch (Exception ex)
+            {
+                _Log4Net.Error("CheckUserAccount--异常信息", ex);
+                return ApiErrorResult(ex.Message);
+            }
+        }
+
         //[HttpPost]
         //[NoCheck]
         //public Rsp_Auth_User LoginIn([FromBody]VmAuthUser authUser)

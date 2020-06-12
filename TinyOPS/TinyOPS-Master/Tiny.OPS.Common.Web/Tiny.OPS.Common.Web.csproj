@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Json" Version="2.2.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.6.0" />
   </ItemGroup>
 
@@ -18,6 +19,8 @@
     <ProjectReference Include="..\Tiny.Common.NetCore\Tiny.Common.Dapper\Tiny.Common.Dapper.csproj" />
     <ProjectReference Include="..\Tiny.Common.NetCore\Tiny.Common.Web\Tiny.Common.Web.csproj" />
     <ProjectReference Include="..\Tiny.Common.NetCore\Tiny.Common\Tiny.Common.csproj" />
+    <ProjectReference Include="..\Tiny.OPS.Common\Tiny.OPS.Common.csproj" />
+    <ProjectReference Include="..\Tiny.OPS.Contract\Tiny.OPS.Contract.csproj" />
   </ItemGroup>
 
 </Project>
