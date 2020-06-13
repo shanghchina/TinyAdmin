@@ -1,10 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using TinyEdu.Business.SystemManage;
+using TinyEdu.Entity.SystemManage;
 using TinyEdu.Model.Param.SystemManage;
 using TinyEdu.Model.Result.SystemManage;
 using TinyEdu.Util.Model;
@@ -14,10 +12,10 @@ namespace TinyEdu.Admin.WebApi.Controllers
     /// <summary>
     /// DataDictController
     /// </summary>
-    [Route("[controller]/[action]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
-    [AuthorizeFilter]
-    public class DataDictController : ControllerBase
+    //[AuthorizeFilter]
+    public class DataDictApiController : BaseController
     {
         private DataDictBLL dataDictBLL = new DataDictBLL();
 
@@ -35,5 +33,20 @@ namespace TinyEdu.Admin.WebApi.Controllers
             return obj;
         }
         #endregion
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="param"></param>
+        /// <param name="pagination"></param>
+        /// <returns></returns>
+        [HttpGet]
+        //[AuthorizeFilter("system:datadict:search")]
+        public async Task<ActionResult> GetPageListJson(DataDictListParam param, Pagination pagination)
+        {
+            TData<List<DataDictEntity>> obj = await dataDictBLL.GetPageList(param, pagination);
+            obj.Tag = 1;
+            return Json(obj);
+        }
     }
 }

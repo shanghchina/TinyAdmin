@@ -43,6 +43,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="log4net.config" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="2.8.391" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
@@ -60,6 +64,7 @@
     <ProjectReference Include="..\..\TinyEdu.Entity\TinyEdu.Model\TinyEdu.Model.csproj" />
     <ProjectReference Include="..\..\TinyEdu.Util\TinyEdu.CodeGenerator\TinyEdu.CodeGenerator.csproj" />
     <ProjectReference Include="..\..\TinyEdu.Util\TinyEdu.Util\TinyEdu.Util.csproj" />
+    <ProjectReference Include="..\..\TinyEdu.Web.Util\TinyEdu.Web.Util.csproj" />
     <ProjectReference Include="..\TinyEdu.Web.Code\TinyEdu.Web.Code.csproj" />
   </ItemGroup>
 
@@ -68,6 +73,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="log4net.config" />
     <None Include="wwwroot\template\导入用户模板.xls" />
   </ItemGroup>
 

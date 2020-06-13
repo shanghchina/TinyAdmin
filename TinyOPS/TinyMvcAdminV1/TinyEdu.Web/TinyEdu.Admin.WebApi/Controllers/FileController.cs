@@ -11,11 +11,20 @@ using TinyEdu.Util.Model;
 
 namespace TinyEdu.Admin.WebApi.Controllers
 {
+    /// <summary>
+    /// 文件上传下载
+    /// </summary>
     [Route("[controller]/[action]")]
     [ApiController]
     [AuthorizeFilter]
     public class FileController : ControllerBase
     {
+        /// <summary>
+        /// 上传单个文件
+        /// </summary>
+        /// <param name="fileModule"></param>
+        /// <param name="files"></param>
+        /// <returns></returns>
         #region 上传单个文件
         [HttpPost]
         public async Task<TData<string>> UploadFile(int fileModule, IFormCollection files)
@@ -25,6 +34,12 @@ namespace TinyEdu.Admin.WebApi.Controllers
         }
         #endregion
 
+        /// <summary>
+        /// 删除单个文件
+        /// </summary>
+        /// <param name="fileModule"></param>
+        /// <param name="path"></param>
+        /// <returns></returns>
         #region 删除单个文件
         [HttpPost]
         public TData<string> DeleteFile(int fileModule, string path)
@@ -34,6 +49,11 @@ namespace TinyEdu.Admin.WebApi.Controllers
         }
         #endregion
 
+        /// <summary>
+        /// 下载文件
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <param name="delete"></param>
         #region 下载文件
         [HttpGet]
         public void DownloadFile(string fileName, int delete = 1)

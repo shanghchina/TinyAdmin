@@ -51,6 +51,12 @@ namespace TinyEdu.Admin.Web
                options.MinimumSameSitePolicy = SameSiteMode.None;
            });
 
+            // 配置日志log4net
+            services.AddLogging(logConfig =>
+            {
+                _Log4Net.LoadLogger();
+            });
+
             services.AddSingleton(HtmlEncoder.Create(UnicodeRanges.All));
 
             services.AddMvc(options =>

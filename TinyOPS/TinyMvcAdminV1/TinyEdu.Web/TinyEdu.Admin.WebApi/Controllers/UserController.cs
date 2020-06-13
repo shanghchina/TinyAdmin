@@ -15,6 +15,9 @@ using TinyEdu.Web.Code;
 
 namespace TinyEdu.Admin.WebApi.Controllers
 {
+    /// <summary>
+    /// 用户数据
+    /// </summary>
     [Route("[controller]/[action]")]
     [ApiController]
     [AuthorizeFilter]

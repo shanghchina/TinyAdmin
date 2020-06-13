@@ -4,9 +4,65 @@
         <name>TinyEdu.Admin.WebApi</name>
     </assembly>
     <members>
-        <member name="T:TinyEdu.Admin.WebApi.BaseController">
+        <member name="T:TinyEdu.Admin.WebApi.Controllers.CustomJsonResult">
+            <summary>
+            CustomJsonResult
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.CustomJsonResult.#ctor">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.CustomJsonResult.ExecuteResult(Microsoft.AspNetCore.Mvc.ActionContext)">
+            <summary>
+            ExecuteResult
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.CustomJsonResult.ExecuteResultAsync(Microsoft.AspNetCore.Mvc.ActionContext)">
+            <summary>
+            ExecuteResultAsync
+            
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.Controllers.BaseController">
+            <summary>
+            base基类方法名必须protected，否则会引起swagger报错
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.BaseController.Json(System.Object)">
+            <summary>
+            覆盖基类的Json方法，用来自定义序列化实体，比如把long类型转成字符串返回到前端
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.Controllers.DataDictApiController">
+            <summary>
+            DataDictController
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.DataDictApiController.GetList(TinyEdu.Model.Param.SystemManage.DataDictListParam)">
+            <summary>
+            获取数据字典列表
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.DataDictApiController.GetPageListJson(TinyEdu.Model.Param.SystemManage.DataDictListParam,TinyEdu.Util.Model.Pagination)">
             <summary>
             
+            </summary>
+            <param name="param"></param>
+            <param name="pagination"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.Controllers.DataDictController">
+            <summary>
+            DataDictController
             </summary>
         </member>
         <member name="M:TinyEdu.Admin.WebApi.Controllers.DataDictController.GetList(TinyEdu.Model.Param.SystemManage.DataDictListParam)">
@@ -15,6 +71,39 @@
             </summary>
             <param name="param"></param>
             <returns></returns>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.Controllers.FileController">
+            <summary>
+            文件上传下载
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.FileController.UploadFile(System.Int32,Microsoft.AspNetCore.Http.IFormCollection)">
+            <summary>
+            上传单个文件
+            </summary>
+            <param name="fileModule"></param>
+            <param name="files"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.FileController.DeleteFile(System.Int32,System.String)">
+            <summary>
+            删除单个文件
+            </summary>
+            <param name="fileModule"></param>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.FileController.DownloadFile(System.String,System.Int32)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="fileName"></param>
+            <param name="delete"></param>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.Controllers.NewsController">
+            <summary>
+            新闻
+            </summary>
         </member>
         <member name="M:TinyEdu.Admin.WebApi.Controllers.NewsController.GetPageList(TinyEdu.Model.Param.OrganizationManage.NewsListParam,TinyEdu.Util.Model.Pagination)">
             <summary>
@@ -45,6 +134,18 @@
             </summary>
             <param name="entity"></param>
             <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.NewsController.SaveViewTimes(TinyEdu.Model.Param.IdParam)">
+            <summary>
+            SaveViewTimes
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.Controllers.UserController">
+            <summary>
+            用户数据
+            </summary>
         </member>
         <member name="M:TinyEdu.Admin.WebApi.Controllers.UserController.GetWxOpenId(System.String)">
             <summary>
@@ -85,6 +186,82 @@
             <param name="context"></param>
             <param name="next"></param>
             <returns></returns>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.Controllers.GlobalExceptionMiddleware">
+            <summary>
+            异常中间件
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.GlobalExceptionMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate)">
+            <summary>
+            构造函数
+            </summary>
+            <param name="next"></param>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.GlobalExceptionMiddleware.Invoke(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Invoke
+            </summary>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.Filter.ApiAuthorizeAttribute">
+            <summary>
+            api身份验证
+            </summary>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.Program">
+            <summary>
+            程序入口
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Program.Main(System.String[])">
+            <summary>
+            主函数
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            CreateWebHostBuilder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="P:TinyEdu.Admin.WebApi.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="P:TinyEdu.Admin.WebApi.Startup.ConfigurationRoot">
+            <summary>
+            ConfigurationRoot
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Startup
+            </summary>
+            <param name="configuration"></param>
+            <param name="env"></param>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            ConfigureServices
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Configure
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
         </member>
     </members>
 </doc>

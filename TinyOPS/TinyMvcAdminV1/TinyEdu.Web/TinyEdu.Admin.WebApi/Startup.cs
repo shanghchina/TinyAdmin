@@ -24,11 +24,26 @@ using TinyEdu.Util.Model;
 
 namespace TinyEdu.Admin.WebApi
 {
+    /// <summary>
+    /// Startup
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Configuration
+        /// </summary>
         public IConfiguration Configuration { get; }
+
+        /// <summary>
+        /// ConfigurationRoot
+        /// </summary>
         public IConfigurationRoot ConfigurationRoot { get; }
 
+        /// <summary>
+        /// Startup
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <param name="env"></param>
         public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
@@ -44,6 +59,10 @@ namespace TinyEdu.Admin.WebApi
             ConfigurationRoot = builder.Build();
         }
 
+        /// <summary>
+        /// ConfigureServices
+        /// </summary>
+        /// <param name="services"></param>
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -68,6 +87,11 @@ namespace TinyEdu.Admin.WebApi
             GlobalContext.Configuration = Configuration;
         }
 
+        /// <summary>
+        /// Configure
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {

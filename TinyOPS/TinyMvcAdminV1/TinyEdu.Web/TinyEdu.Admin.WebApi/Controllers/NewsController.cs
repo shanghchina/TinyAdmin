@@ -12,6 +12,9 @@ using TinyEdu.Util.Model;
 
 namespace TinyEdu.Admin.WebApi.Controllers
 {
+    /// <summary>
+    /// 新闻
+    /// </summary>
     [Route("[controller]/[action]")]
     [ApiController]
     [AuthorizeFilter]
@@ -72,6 +75,11 @@ namespace TinyEdu.Admin.WebApi.Controllers
             return obj;
         }
 
+        /// <summary>
+        /// SaveViewTimes
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<TData<string>> SaveViewTimes([FromBody]IdParam param)
         {

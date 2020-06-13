@@ -9,15 +9,27 @@ using TinyEdu.Util.Model;
 
 namespace TinyEdu.Admin.WebApi.Controllers
 {
+    /// <summary>
+    /// 异常中间件
+    /// </summary>
     public class GlobalExceptionMiddleware
     {
         private readonly RequestDelegate next;
 
+        /// <summary>
+        /// 构造函数
+        /// </summary>
+        /// <param name="next"></param>
         public GlobalExceptionMiddleware(RequestDelegate next)
         {
             this.next = next;
         }
 
+        /// <summary>
+        /// Invoke
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public async Task Invoke(HttpContext context /* other dependencies */)
         {
             try
