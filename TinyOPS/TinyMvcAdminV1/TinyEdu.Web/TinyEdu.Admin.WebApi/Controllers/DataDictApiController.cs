@@ -16,7 +16,7 @@ namespace TinyEdu.Admin.WebApi.Controllers
     [Route("api/[controller]/[action]")]
     [ApiController]
     //[AuthorizeFilter]
-    public class DataDictApiController : BaseController
+    public class DataDictApiController : ControllerBase
     {
         private DataDictBLL dataDictBLL = new DataDictBLL();
 
@@ -35,6 +35,25 @@ namespace TinyEdu.Admin.WebApi.Controllers
         }
         #endregion
 
+        ///// <summary>
+        ///// GetPageListJson
+        ///// </summary>
+        ///// <param name="paramRequest"></param>
+        ///// <returns></returns>
+        //[HttpGet]
+        ////[AuthorizeFilter("system:datadict:search")]
+        //public async Task<IActionResult> GetPageListJson(DataDictListRequest paramRequest)
+        //{
+        //    DataDictListParam param = new DataDictListParam();
+        //    param.DictType = paramRequest.DictType;
+        //    param.Remark = paramRequest.Remark;
+
+        //    Pagination pagination = paramRequest.pagination;
+        //    TData<List<DataDictEntity>> obj = await dataDictBLL.GetPageList(param, pagination);
+        //    obj.Tag = 1;
+        //    return Json(obj);
+        //}
+
         /// <summary>
         /// GetPageListJson
         /// </summary>
@@ -42,7 +61,7 @@ namespace TinyEdu.Admin.WebApi.Controllers
         /// <returns></returns>
         [HttpPost]
         //[AuthorizeFilter("system:datadict:search")]
-        public async Task<IActionResult> GetPageListJson(DataDictListRequest paramRequest)
+        public async Task<TData<List<DataDictEntity>>> GetPageListJson(DataDictListRequest paramRequest)
         {
             DataDictListParam param = new DataDictListParam();
             param.DictType = paramRequest.DictType;
@@ -51,7 +70,26 @@ namespace TinyEdu.Admin.WebApi.Controllers
             Pagination pagination = paramRequest.pagination;
             TData<List<DataDictEntity>> obj = await dataDictBLL.GetPageList(param, pagination);
             obj.Tag = 1;
-            return Json(obj);
+            return obj;
         }
+
+        ///// <summary>
+        ///// GetPageListJson
+        ///// </summary>
+        ///// <param name="paramRequest"></param>
+        ///// <returns></returns>
+        //[HttpPost]
+        ////[AuthorizeFilter("system:datadict:search")]
+        //public async Task<IActionResult> GetPageListJson([FromBody]DataDictListRequest paramRequest)
+        //{
+        //    DataDictListParam param = new DataDictListParam();
+        //    param.DictType = paramRequest.DictType;
+        //    param.Remark = paramRequest.Remark;
+
+        //    Pagination pagination = paramRequest.pagination;
+        //    TData<List<DataDictEntity>> obj = await dataDictBLL.GetPageList(param, pagination);
+        //    obj.Tag = 1;
+        //    return Json(obj);
+        //}
     }
 }

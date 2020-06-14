@@ -11,7 +11,7 @@ using TinyEdu.Web.Util;
 
 namespace TinyEdu.Admin.Web.Controllers
 {
-    public class ApiBaseController : Controller
+    public class ApiBaseController : BaseController
     {
         /// <summary>
         /// 前后端调用函数
@@ -20,15 +20,16 @@ namespace TinyEdu.Admin.Web.Controllers
         /// < param name="json"></param>
         /// <returns></returns>
         [HttpPost]
-        public IActionResult AjaxPostCorssDomain([FromBody]AjaxPostParam postParam)
+        public ActionResult AjaxPostCorssDomain([FromBody]AjaxPostParam postParam)
         {
             string url = postParam.url; string json = postParam.json;
             try
             {
                 var _result = PostHelper.GetPostResult(url, json);
-                //var json_result = Json(_result);
-                //return json_result;
-                return ApiJsonHelper.LargeJson(_result);
+                var json_result = Json(_result);
+                return json_result;
+                //var result = ApiJsonHelper.LargeJson(_result);
+                //return result;
             }
             catch (Exception ex)
             {
