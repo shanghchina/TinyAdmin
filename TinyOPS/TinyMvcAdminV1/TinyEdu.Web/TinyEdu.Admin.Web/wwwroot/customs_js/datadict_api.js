@@ -20,6 +20,8 @@ function YSinitApiGrid() {
     // url: configuration.tscweburl + '/Home/AjaxPostCorssDomain',//请求URL
     //var queryUrl = '@Url.Content("~/DemoApiRequest/DataDictManage/AjaxPostCorssDomain")';
     var queryUrl = configuration.tscapiurl + '/api/DataDictApi/GetPageListJson';
+    var appstring = GetCheckAppString();
+    console.log(appstring);
     $('#gridTable').ysTable({
         method: 'post', //请求方式
         contentType: 'application/json',
@@ -48,7 +50,9 @@ function YSinitApiGrid() {
                 }
             }
         ],
-        //queryParamsType: "undefined",
+        beforeSend: function (request) {
+            request.setRequestHeader("Sign", appstring);
+        },
         queryParams: function (params) {
             //var pagination = $('#gridTable').ysTable('getPagination', params);
             //var queryString = $('#searchDiv').getWebControls(pagination);

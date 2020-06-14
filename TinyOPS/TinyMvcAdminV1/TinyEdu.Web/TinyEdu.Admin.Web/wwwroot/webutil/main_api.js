@@ -1,4 +1,35 @@
-﻿//mvc请求webapi通用函数
+﻿$(function () {
+  
+
+}); 
+
+//mvc请求webapi通用函数
+var GetCheckAppString = function () {
+    var result = "";
+    var postdata = { ajaxAppId: configuration.appid };
+    $.ajax({
+        url: '/ApiBase/AjaxGetEncryptStr',
+        contentType: "application/json",
+        datatype: "text",
+        type: 'post',
+        cache: false,
+        data: JSON.stringify(postdata),
+        success: function (data) {
+            console.log(data);
+            result = data;
+            //成功后调用
+        },
+        error: function (e) {
+            //失败后回调
+            console.log(e);
+        },
+        beforeSend: function () {
+            //发送请求前调用，可以放一些"正在加载"之类额话
+        }
+    })
+    return result;
+}
+
 var RequestApiPostJson = function (apiurl, requestjson, loading, callback) {
     $.ajax({
         url: configuration.tscweburl + '/Home/AjaxPostCorssDomain',

@@ -22,6 +22,7 @@
     @BundlerHelper.Render(HostingEnvironment.ContentRootPath, Url.Content("~/lib/select2/4.0.6/js/select2.min.js"))
     <!--调用 web api 用到配置-->
     <script type="text/javascript" src='@Url.Content("~/webutil/app-setting.js")'></script>
+    <script type="text/javascript" src='@Url.Content("~/webutil/main_api.js")'></script>
     @RenderSection("header", false)
     <script type="text/javascript">
         var ctx = '@Url.Content("~/")';

@@ -69,6 +69,7 @@ namespace TinyEdu.Admin.Web
             services.AddHttpContextAccessor();
 
             services.AddOptions();
+            services.Configure<ApiAuthorize>(Configuration.GetSection("ApiAuthorize"));
 
             services.AddDataProtection().PersistKeysToFileSystem(new DirectoryInfo(GlobalContext.HostingEnvironment.ContentRootPath + Path.DirectorySeparatorChar + "DataProtection"));
 

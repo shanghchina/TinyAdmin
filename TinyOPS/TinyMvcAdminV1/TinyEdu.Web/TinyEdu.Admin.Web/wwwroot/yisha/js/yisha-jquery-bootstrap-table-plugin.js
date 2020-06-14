@@ -59,7 +59,7 @@
         columns: [],
         queryParams: {},
         onLoadSuccess: function (data) {
-            debugger
+            //debugger
             var data_type = $.type(data);
             if (data_type != "object") {
                 data = $.parseJSON(data);
@@ -71,7 +71,7 @@
             }
         },
         onLoadError: function (status, s) {
-            debugger
+            //debugger
             if (s.statusText != "abort") {
                 ys.alertError("数据加载失败！");
             }

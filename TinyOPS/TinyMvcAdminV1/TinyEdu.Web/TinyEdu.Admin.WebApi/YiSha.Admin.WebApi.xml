@@ -209,6 +209,12 @@
             api身份验证
             </summary>
         </member>
+        <member name="M:TinyEdu.Admin.WebApi.Filter.ApiAuthorizeAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            api身份验证执行
+            </summary>
+            <param name="context"></param>
+        </member>
         <member name="T:TinyEdu.Admin.WebApi.Program">
             <summary>
             程序入口

@@ -9,7 +9,7 @@ using TinyEdu.Admin.Web.Controllers;
 namespace TinyEdu.Admin.Web.Areas.DataDictManage.Controllers
 {
     [Area("DemoApiRequest")]
-    public class DataDictManageController : ApiBaseController
+    public class DataDictManageController : Controller
     {
         // GET: DataDictManage
         public ActionResult Index()

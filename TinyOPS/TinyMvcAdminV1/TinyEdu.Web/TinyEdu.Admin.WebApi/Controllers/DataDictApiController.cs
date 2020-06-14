@@ -60,7 +60,7 @@ namespace TinyEdu.Admin.WebApi.Controllers
         /// <param name="paramRequest"></param>
         /// <returns></returns>
         [HttpPost]
-        //[AuthorizeFilter("system:datadict:search")]
+        [AuthorizeFilter]
         public async Task<TData<List<DataDictEntity>>> GetPageListJson(DataDictListRequest paramRequest)
         {
             DataDictListParam param = new DataDictListParam();
