@@ -7,11 +7,11 @@ var protocolStr = document.location.protocol; //当前的网络协议
 
 var configuration = {
     tscweburl: protocolStr + '//tinyadmin.local.com',
-    tscapiurl: 'http://tinyapi.local.com',
+    tscapiurl: 'http://localhost:5001',
     appid: 'TINY',
 }
 
-//// 参考用
+//// 参考用//'http://tinyapi.local.com',
 //var system = {
 //    LoginUser: null,
 //    PermissionPoint: {

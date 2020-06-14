@@ -4,11 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using TinyEdu.Admin.Web.Controllers;
 
 namespace TinyEdu.Admin.Web.Areas.DataDictManage.Controllers
 {
     [Area("DemoApiRequest")]
-    public class DataDictManageController : Controller
+    public class DataDictManageController : ApiBaseController
     {
         // GET: DataDictManage
         public ActionResult Index()

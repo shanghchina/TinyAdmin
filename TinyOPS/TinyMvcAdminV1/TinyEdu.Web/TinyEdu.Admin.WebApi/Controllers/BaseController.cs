@@ -90,7 +90,7 @@ namespace TinyEdu.Admin.WebApi.Controllers
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public CustomJsonResult Json(object data)
+        protected CustomJsonResult Json(object data)
         {
             SetTDataMessage(data);
 

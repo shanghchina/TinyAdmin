@@ -1,0 +1,52 @@
+                var pagination = $('#gridTable').ysTable('getPagination', params);
+                var queryString = $('#searchDiv').getWebControls(pagination);
+
+{pageSize: 10, pageIndex: 1, sort: "DictSort", sortType: "Asc"}
+{pageSize: 10, pageIndex: 1, sort: "DictSort", sortType: "Asc", DictType: ""}
+
+	getPagination: function (target, params) {
+            var pagination = {
+                pageSize: params.limit,                         //页面大小
+                pageIndex: (params.offset / params.limit) + 1,   //页码
+                sort: params.sort,      //排序列名
+                sortType: params.order //排位命令（desc，asc）
+            };
+            return pagination;
+        }
+
+
+JSON.stringify(pagination)=
+"{"pageSize":10,"pageIndex":1,"sort":"DictSort","sortType":"Asc"}"
+和Pagination类参数中对比一直
+
+JSON.stringify(queryString)=
+"{"pageSize":10,"pageIndex":1,"sort":"DictSort","sortType":"Asc","DictType":"","Remark":""}"
+增加了 DataDictListParam中的参数值
+
+
+
+param = {url: "http://localhost:5001/SystemManage/DataDict/GetPageListJson", json: "{"pageSize":10,"pageIndex":1,"sort":"DictSort","sortType":"Asc","DictType":"","Remark":""}"}
+api/DataDictApi/GetPageListJson
+
+{url: "http://localhost:5001/api/DataDictApi/GetPageListJson", json: "{"pageSize":10,"pageIndex":1,"sort":"DictSort","sortType":"Asc","DictType":"","Remark":""}"}
+
+
+postman测试
+http://localhost:5000/Home/AjaxPostCorssDomain
+
+{url: "http://localhost:5001/api/DataDictApi/GetPageListJson", json: "{"pageSize":10,"pageIndex":1,"sort":"DictSort","sortType":"Asc","DictType":"","Remark":""}"}
+
+
+{url: "http://localhost:5001/api/DataDictApi/GetPageListJson", json: "teste111"}json: "teste111"url: "http://localhost:5001/api/DataDictApi/GetPageListJson"__proto__: Object
+
+
+{url: "http://localhost:5001/api/DataDictApi/GetPageListJson", json: "teste111"}json: "teste111"url: "http://localhost:5001/api/DataDictApi/GetPageListJson"__proto__: Object
+
+{url: "http://localhost:5001/api/DataDictApi/GetPageListJson", json: "teste111"}
+
+DemoApiRequest/DataDictManage/AjaxPostCorssDomain
+
+{"url":"111","json":"2222"}
+
+
+http://localhost:5001/api/DataDictApi/GetPageListJson

@@ -17,6 +17,7 @@ using TinyEdu.Business.SystemManage;
 using TinyEdu.Enum;
 using TinyEdu.Web.Util;
 using TinyEdu.Model;
+using TinyEdu.Model.Param.SystemManage;
 
 namespace TinyEdu.Admin.Web.Controllers
 {
@@ -189,34 +190,6 @@ namespace TinyEdu.Admin.Web.Controllers
             }
         }
         #endregion
-
-        /// <summary>
-        /// 前后端调用函数
-        /// </summary>
-        /// <param name="url"></param>
-        /// <param name="json"></param>
-        /// <returns></returns>
-        protected ActionResult AjaxPostCorssDomain(string url, string json)
-        {
-            try
-            {
-                var _result = PostHelper.GetPostResult(url, json);
-                return ApiJsonHelper.LargeJson(_result);
-            }
-            catch (Exception ex)
-            {
-                //用log4net记录日志
-                _Log4Net.Error("AjaxPostCorssDomain." + url + "." + json, ex);
-
-                //Logger.Default.Error("AjaxPostCorssDomain异常：{0}", ex);
-                return Json(JsonConvert.SerializeObject(new ResultParam
-                {
-                    IsSuccess = false,
-                    AlertMessage = JsonConvert.SerializeObject(ex),
-                }));
-
-            }
-        }
     }
 
     public class CustomJsonResult : JsonResult
