@@ -63,9 +63,9 @@ namespace TinyEdu.Admin.WebApi.Controllers
         [ApiAuthorize]
         public async Task<TData<List<DataDictEntity>>> GetPageListJson(DataDictListRequest paramRequest)
         {
-            DataDictListParam param = new DataDictListParam();
-            param.DictType = paramRequest.DictType;
-            param.Remark = paramRequest.Remark;
+            DataDictListParam param = paramRequest.param;
+            //param.DictType = paramRequest.DictType;
+            //param.Remark = paramRequest.Remark;
 
             Pagination pagination = paramRequest.pagination;
             TData<List<DataDictEntity>> obj = await dataDictBLL.GetPageList(param, pagination);

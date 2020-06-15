@@ -270,6 +270,14 @@
             <param name="context"></param>
             <param name="msg"></param>
         </member>
+        <member name="M:TinyEdu.Admin.WebApi.ApiAuthorizeAttribute.OnActionExecutionAsync(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,Microsoft.AspNetCore.Mvc.Filters.ActionExecutionDelegate)">
+            <summary>
+            异步接口日志
+            </summary>
+            <param name="context"></param>
+            <param name="next"></param>
+            <returns></returns>
+        </member>
         <member name="T:TinyEdu.Admin.WebApi.Program">
             <summary>
             程序入口
