@@ -11,6 +11,9 @@
 
     @await Html.PartialAsync("_Form.cshtml")
 
+    <!--调用 web api 用到配置-->
+    <script type="text/javascript" src='@Url.Content("~/webutil/app-setting.js")'></script>
+    <script type="text/javascript" src='@Url.Content("~/webutil/main_api.js")'></script>
     @RenderSection("header", false)
     <script type="text/javascript">
         var ctx = '@Url.Content("~/")';

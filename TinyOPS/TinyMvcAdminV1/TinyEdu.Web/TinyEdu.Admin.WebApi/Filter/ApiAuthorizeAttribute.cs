@@ -49,11 +49,48 @@ namespace TinyEdu.Admin.WebApi
         //    }
         //}
 
+        ///// <summary>
+        ///// api身份验证执行
+        ///// </summary>
+        ///// <param name="context"></param>
+        //public override void OnActionExecuting(ActionExecutingContext context)
+        //{
+        //    //秘钥校验
+        //    var heads = context.HttpContext.Request.Headers;
+        //    string sign = "";
+        //    foreach (var item in heads)
+        //    {
+        //        switch (item.Key.ToUpper())
+        //        {
+        //            case "SIGN":
+        //                sign = item.Value;
+        //                break;
+        //            default:
+        //                break;
+        //        }
+        //    }
+
+        //    //string path = new ConfigurationHelper().config["RedisPath"];
+        //    ApiAuthorize apiAuth = new ConfigurationHelper().GetAppSettings<ApiAuthorize>("ApiAuthorize");
+
+        //    var key = apiAuth.Appid + apiAuth.AppSecret;
+        //    string md5str = HttpContextUtils.Md5Encrypt(key).ToUpper();
+        //    _Log4Net.Info(string.Format("api获取的签名参数:{0}，加密后{1}------>", key, md5str));
+        //    _Log4Net.Info(string.Format("前端加密sign:{0}", sign));
+        //    if (sign != md5str)
+        //    {
+        //        _Log4Net.Info(string.Format("sign加密验证失败 前端:{0}api：{1}------>", sign, md5str));
+        //        ReturnError(context, "sign加密验证失败");
+        //    }
+
+        //    base.OnActionExecuting(context);
+        //}
+
         /// <summary>
-        /// api身份验证执行
+        /// 校验秘钥签名
         /// </summary>
         /// <param name="context"></param>
-        public override void OnActionExecuting(ActionExecutingContext context)
+        private void CheckAppSign(ActionExecutingContext context)
         {
             //秘钥校验
             var heads = context.HttpContext.Request.Headers;
@@ -82,8 +119,6 @@ namespace TinyEdu.Admin.WebApi
                 _Log4Net.Info(string.Format("sign加密验证失败 前端:{0}api：{1}------>", sign, md5str));
                 ReturnError(context, "sign加密验证失败");
             }
-
-            base.OnActionExecuting(context);
         }
 
         /// <summary>
@@ -202,6 +237,8 @@ namespace TinyEdu.Admin.WebApi
             };
             AsyncTaskHelper.StartTask(taskAction);
             #endregion
+
+            CheckAppSign(context);
         }
 
         //    /// <summary>

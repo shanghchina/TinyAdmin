@@ -16,7 +16,7 @@ var GetCheckAppString = function () {
         cache: false,
         data: JSON.stringify(postdata),
         success: function (data) {
-            console.log(data);
+            //console.log(data);
             result = data;
             //成功后调用
         },
@@ -39,7 +39,7 @@ var RequestApiPostJson = function (apiurl, requestjson, loading, callback) {
         cache: false,
         data: { url: apiurl, json: requestjson },
         success: function (data) {
-            console.log(data);
+            //console.log(data);
             //成功后调用
             callback(data);
         },
@@ -73,7 +73,7 @@ var RequestApiPostHeader = function (apiurl, requestjson, loading, callback) {
         cache: false,
         data: { url: apiurl, json: requestjson },
         success: function (data) {
-            console.log(data);
+            //console.log(data);
             //成功后调用
             callback(data);
         },

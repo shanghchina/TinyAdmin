@@ -82,6 +82,7 @@ namespace TinyEdu.Admin.WebApi
             services.AddCors();
             services.AddMvc(options =>
             {
+                options.Filters.Add<ApiAuthorizeAttribute>(); //api验证
                 options.ModelMetadataDetailsProviders.Add(new ModelBindingMetadataProvider());
             }).AddJsonOptions(options => options.SerializerSettings.ContractResolver = new DefaultContractResolver());
 

@@ -11,27 +11,23 @@ namespace TinyEdu.Admin.Web.Areas.DataDictManage.Controllers
     [Area("DemoApiRequest")]
     public class DataDictManageController : Controller
     {
+        /// <summary>
+        /// 查询界面
+        /// </summary>
+        /// <returns></returns>
         // GET: DataDictManage
         public ActionResult Index()
         {
             return View();
         }
 
-        // POST: DataDictManage/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        /// <summary>
+        /// 编辑界面
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Edit()
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
     }
 }

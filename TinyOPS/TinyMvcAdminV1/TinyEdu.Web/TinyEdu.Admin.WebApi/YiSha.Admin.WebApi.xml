@@ -52,6 +52,63 @@
             
             </summary>
         </member>
+        <member name="T:TinyEdu.Admin.WebApi.Controllers.ApiDataDictController">
+            <summary>
+            DataDictController
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiDataDictController.GetPageListJson(TinyEdu.Model.DataDictListRequest)">
+            <summary>
+            GetPageListJson
+            </summary>
+            <param name="paramRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiDataDictController.GetFormJson(System.Int64)">
+            <summary>
+            字典类型界面信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiDataDictController.GetMaxSortJson">
+            <summary>
+            获取最大序号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiDataDictController.GetDataDictListJson">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiDataDictController.SaveFormJson(TinyEdu.Entity.SystemManage.DataDictEntity)">
+            <summary>
+            保存字典类型
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiDataDictController.DeleteFormJson(System.String)">
+            <summary>
+            删除字典类型
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.Controllers.ApiDataDictDetailController">
+            <summary>
+            字典明细
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiDataDictDetailController.GetListJson(TinyEdu.Model.Param.SystemManage.DataDictDetailListParam)">
+            <summary>
+            
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
         <member name="T:TinyEdu.Admin.WebApi.Controllers.CustomJsonResult">
             <summary>
             CustomJsonResult
@@ -86,25 +143,6 @@
             覆盖基类的Json方法，用来自定义序列化实体，比如把long类型转成字符串返回到前端
             </summary>
             <param name="data"></param>
-            <returns></returns>
-        </member>
-        <member name="T:TinyEdu.Admin.WebApi.Controllers.DataDictApiController">
-            <summary>
-            DataDictController
-            </summary>
-        </member>
-        <member name="M:TinyEdu.Admin.WebApi.Controllers.DataDictApiController.GetList(TinyEdu.Model.Param.SystemManage.DataDictListParam)">
-            <summary>
-            获取数据字典列表
-            </summary>
-            <param name="param"></param>
-            <returns></returns>
-        </member>
-        <member name="M:TinyEdu.Admin.WebApi.Controllers.DataDictApiController.GetPageListJson(TinyEdu.Model.DataDictListRequest)">
-            <summary>
-            GetPageListJson
-            </summary>
-            <param name="paramRequest"></param>
             <returns></returns>
         </member>
         <member name="T:TinyEdu.Admin.WebApi.Controllers.DataDictController">
@@ -257,9 +295,9 @@
             api身份验证
             </summary>
         </member>
-        <member name="M:TinyEdu.Admin.WebApi.ApiAuthorizeAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+        <member name="M:TinyEdu.Admin.WebApi.ApiAuthorizeAttribute.CheckAppSign(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
             <summary>
-            api身份验证执行
+            校验秘钥签名
             </summary>
             <param name="context"></param>
         </member>
