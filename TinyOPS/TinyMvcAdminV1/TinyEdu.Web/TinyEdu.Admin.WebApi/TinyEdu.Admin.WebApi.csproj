@@ -13,6 +13,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="log4net.config" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="log4net.config" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
@@ -23,6 +31,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\TinyEdu.Business\TinyEdu.Business.AutoJob\TinyEdu.Business.AutoJob.csproj" />
     <ProjectReference Include="..\..\TinyEdu.Business\TinyEdu.Business\TinyEdu.Business.csproj" />
+    <ProjectReference Include="..\..\TinyEdu.Web.Util\TinyEdu.Web.Util.csproj" />
   </ItemGroup>
 
 </Project>

@@ -4,6 +4,54 @@
         <name>TinyEdu.Admin.WebApi</name>
     </assembly>
     <members>
+        <member name="T:TinyEdu.Admin.WebApi.ApiAuthorize">
+            <summary>
+            appsetting对应配置
+            </summary>
+        </member>
+        <member name="P:TinyEdu.Admin.WebApi.ApiAuthorize.Appid">
+            <summary>
+            appid
+            </summary>
+        </member>
+        <member name="P:TinyEdu.Admin.WebApi.ApiAuthorize.AppSecret">
+             <summary>
+            AppSecret
+             </summary>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.ConfigurationHelper">
+            <summary>
+            读取配置文件
+            </summary>
+        </member>
+        <member name="P:TinyEdu.Admin.WebApi.ConfigurationHelper.config">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.ConfigurationHelper.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.ConfigurationHelper.GetAppSettings``1(System.String)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="key"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.MyServiceProvider">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:TinyEdu.Admin.WebApi.MyServiceProvider.ServiceProvider">
+            <summary>
+            
+            </summary>
+        </member>
         <member name="T:TinyEdu.Admin.WebApi.Controllers.CustomJsonResult">
             <summary>
             CustomJsonResult
@@ -204,16 +252,23 @@
             <param name="context"></param>
             <returns></returns>
         </member>
-        <member name="T:TinyEdu.Admin.WebApi.Filter.ApiAuthorizeAttribute">
+        <member name="T:TinyEdu.Admin.WebApi.ApiAuthorizeAttribute">
             <summary>
             api身份验证
             </summary>
         </member>
-        <member name="M:TinyEdu.Admin.WebApi.Filter.ApiAuthorizeAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+        <member name="M:TinyEdu.Admin.WebApi.ApiAuthorizeAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
             <summary>
             api身份验证执行
             </summary>
             <param name="context"></param>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.ApiAuthorizeAttribute.ReturnError(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext,System.String)">
+            <summary>
+            返回错误消息信息
+            </summary>
+            <param name="context"></param>
+            <param name="msg"></param>
         </member>
         <member name="T:TinyEdu.Admin.WebApi.Program">
             <summary>

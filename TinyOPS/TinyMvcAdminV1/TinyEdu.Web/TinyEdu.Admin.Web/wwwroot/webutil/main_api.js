@@ -8,6 +8,7 @@ var GetCheckAppString = function () {
     var result = "";
     var postdata = { ajaxAppId: configuration.appid };
     $.ajax({
+        async: false,
         url: '/ApiBase/AjaxGetEncryptStr',
         contentType: "application/json",
         datatype: "text",

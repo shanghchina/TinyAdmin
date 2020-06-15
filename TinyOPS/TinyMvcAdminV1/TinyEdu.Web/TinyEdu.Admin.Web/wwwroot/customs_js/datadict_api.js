@@ -1,6 +1,29 @@
 ﻿$(function () {
-    YSinitApiGrid();
+    //alert("1");
+    doIniApi("1", function (data) {
+        //alert("3");
+        doInvokeApiGrid(data);
+    });
 });
+
+
+function doIniApi(sign, callBackFun) {
+    //2 获取sign
+    var appSign = GetCheckAppString();
+    //console.log(appSign);
+
+    if (callBackFun != undefined && typeof callBackFun == 'function') {
+        callBackFun(appSign);
+    } else {
+        console.log("第二个参数不是函数");
+    }
+}
+
+function doInvokeApiGrid(appSign) {
+    //alert("4");
+    //加载grid
+    YSinitApiGrid(appSign)
+}
 
 /////////////////////////////////////
 var getConditionJson = function (params) {
@@ -15,13 +38,13 @@ var getConditionJson = function (params) {
     return paramjson;
 }
 
-function YSinitApiGrid() {
+function YSinitApiGrid(appSign) {
     // var queryUrl = '@Url.Content("~/SystemManage/DataDict/GetPageListJson")';
     // url: configuration.tscweburl + '/Home/AjaxPostCorssDomain',//请求URL
     //var queryUrl = '@Url.Content("~/DemoApiRequest/DataDictManage/AjaxPostCorssDomain")';
     var queryUrl = configuration.tscapiurl + '/api/DataDictApi/GetPageListJson';
-    var appstring = GetCheckAppString();
-    console.log(appstring);
+    // var appSign = "";
+
     $('#gridTable').ysTable({
         method: 'post', //请求方式
         contentType: 'application/json',
@@ -50,8 +73,9 @@ function YSinitApiGrid() {
                 }
             }
         ],
-        beforeSend: function (request) {
-            request.setRequestHeader("Sign", appstring);
+        //headers: { "Authorization": "Basic cGluZ2FuOjEyMzQ1Na==" },
+        ajaxOptions: {
+            headers: { "Sign": appSign }
         },
         queryParams: function (params) {
             //var pagination = $('#gridTable').ysTable('getPagination', params);

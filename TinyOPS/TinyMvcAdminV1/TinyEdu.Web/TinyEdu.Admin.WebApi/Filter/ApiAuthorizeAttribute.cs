@@ -1,6 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Options;
+using System;
+using System.Net;
+using TinyEdu.Util;
+using TinyEdu.Util.Model;
+using TinyEdu.Web.Util;
 
-namespace TinyEdu.Admin.WebApi.Filter
+namespace TinyEdu.Admin.WebApi
 {
     /// <summary>
     /// api身份验证
@@ -32,32 +39,59 @@ namespace TinyEdu.Admin.WebApi.Filter
         //    }
         //}
 
-
         /// <summary>
         /// api身份验证执行
         /// </summary>
         /// <param name="context"></param>
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-
             //秘钥校验
             var heads = context.HttpContext.Request.Headers;
-            string appId = "";
+            string sign = "";
             foreach (var item in heads)
             {
                 switch (item.Key.ToUpper())
                 {
-                    case "APPID":
-                        appId = item.Value;
+                    case "SIGN":
+                        sign = item.Value;
                         break;
                     default:
                         break;
                 }
             }
 
+            //string path = new ConfigurationHelper().config["RedisPath"];
+            ApiAuthorize apiAuth = new ConfigurationHelper().GetAppSettings<ApiAuthorize>("ApiAuthorize");
+
+            var key = apiAuth.Appid + apiAuth.AppSecret;
+            string md5str = HttpContextUtils.Md5Encrypt(key).ToUpper();
+            _Log4Net.Info(string.Format("api获取的签名参数:{0}，加密后{1}------>", key, md5str));
+            _Log4Net.Info(string.Format("前端加密sign:{0}", sign));
+            if (sign != md5str)
+            {
+                _Log4Net.Info(string.Format("sign加密验证失败 前端:{0}api：{1}------>", sign, md5str));
+                ReturnError(context, "sign加密验证失败");
+            }
 
             base.OnActionExecuting(context);
         }
+
+        /// <summary>
+        /// 返回错误消息信息
+        /// </summary>
+        /// <param name="context"></param>
+        /// <param name="msg"></param>
+
+        public void ReturnError(ActionExecutingContext context, string msg)
+        {
+            //BaseResponseModel<string> response = new BaseResponseModel<string> { Code = CodeConst.SystemException, Message = msg };
+            //context.HttpContext.Response.StatusCode = Convert.ToInt32(HttpStatusCode.InternalServerError);
+            //context.Result = new JsonResult(response);
+            TData<string> response = new TData<string> { Tag = 0, Message = msg };
+            context.HttpContext.Response.StatusCode = Convert.ToInt32(HttpStatusCode.InternalServerError);
+            context.Result = new JsonResult(response);
+        }
+
 
         //    /// <summary>
         //    /// api身份验证执行

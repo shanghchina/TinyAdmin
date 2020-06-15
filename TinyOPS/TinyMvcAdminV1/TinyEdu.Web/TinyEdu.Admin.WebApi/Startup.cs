@@ -67,6 +67,12 @@ namespace TinyEdu.Admin.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            // 配置日志log4net
+            services.AddLogging(logConfig =>
+            {
+                _Log4Net.LoadLogger();
+            });
+
             services.AddSwaggerGen(config =>
             {
                 config.SwaggerDoc("v1", new Info { Title = "Group Web Api", Version = "v1" });
@@ -138,6 +144,10 @@ namespace TinyEdu.Admin.WebApi
                 c.RoutePrefix = "api-doc";
                 c.SwaggerEndpoint("v1/swagger.json", "Group Web Api v1");
             });
+
+            //添加读取配置文件
+            MyServiceProvider.ServiceProvider = app.ApplicationServices;
+
 
             new JobCenter().Start(); // 定时任务
         }
