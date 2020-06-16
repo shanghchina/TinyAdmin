@@ -11,7 +11,7 @@ namespace TinyEdu.Data.Repository
 {
     /// <summary>
     /// Copyright (c) 2019 集团公司
-    /// 创建人：刘括
+    /// 创建人：
     /// 日 期：2018.10.18
     /// 描 述：数据库建立工厂
     /// </summary>
