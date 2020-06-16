@@ -109,6 +109,40 @@
             <param name="param"></param>
             <returns></returns>
         </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiDataDictDetailController.GetPageListJson(TinyEdu.Model.DataDictDetailListRequest)">
+            <summary>
+            
+            </summary>
+            <param name="paramRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiDataDictDetailController.GetFormJson(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiDataDictDetailController.GetMaxSortJson">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiDataDictDetailController.SaveFormJson(TinyEdu.Entity.SystemManage.DataDictDetailEntity)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiDataDictDetailController.DeleteFormJson(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
         <member name="T:TinyEdu.Admin.WebApi.Controllers.CustomJsonResult">
             <summary>
             CustomJsonResult

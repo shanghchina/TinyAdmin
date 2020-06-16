@@ -140,6 +140,6 @@ function deleteForm() {
 }
 
 function showDataDictDetailForm(dictType) {
-    var url = '/SystemManage/DataDictDetail/DataDictDetailIndex' + '?dictType=' + dictType;
+    var url = '/DemoApiRequest/DataDictDetail/DetailIndex' + '?dictType=' + dictType;
     createMenuItem(url, "字典数据");
 }

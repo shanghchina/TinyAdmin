@@ -1,0 +1,167 @@
+﻿@using TinyEdu.Util.Extension;
+@using TinyEdu.Enum;
+@{
+    ViewData["Title"] = "DetailIndex";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+
+<div class="container-div">
+    <div class="row">
+        <div id="searchDiv" class="col-sm-12 search-collapse">
+            <div class="select-list">
+                <ul>
+                    <li>
+                        字典类：<input id="dictType" col="DictType" type="text" readonly="readonly" />
+                    </li>
+                    <li>
+                        字典键：<input id="dictKey" col="DictKey" type="text" />
+                    </li>
+                    <li>
+                        字典值：<input id="dictValue" col="DictValue" type="text" />
+                    </li>
+                    <li>
+                        <a id="btnSearch" class="btn btn-primary btn-sm" onclick="searchGrid()"><i class="fa fa-search"></i>&nbsp;搜索</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="btn-group-sm hidden-xs" id="toolbar">
+            <a id="btnAdd" class="btn btn-success" onclick="showSaveForm(true)"><i class="fa fa-plus"></i> 新增</a>
+            <a id="btnEdit" class="btn btn-primary disabled" onclick="showSaveForm(false)"><i class="fa fa-edit"></i> 修改</a>
+            <a id="btnDelete" class="btn btn-danger disabled" onclick="deleteForm()"><i class="fa fa-remove"></i> 删除</a>
+        </div>
+
+        <div class="col-sm-12 select-table table-striped">
+            <table id="gridTable" data-mobile-responsive="true"></table>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var apiurl = configuration.tscapiurl
+    var dictType = tinyedu.request("dictType");
+    
+    var appSign = g_sign;
+    $(function () {
+        $("#dictType").val(dictType);
+
+        initGrid(appSign);
+    });
+
+    var getConditionJson = function (params) {
+        var pagination = $('#gridTable').ysTable('getPagination', params);
+        var divparam = $('#searchDiv').getWebControls(pagination);
+        var paramjson = {
+            pagination: pagination,
+            param: divparam
+        };
+        //console.log(paramjson)
+        return paramjson;
+    }
+
+    function initGrid(appSign) {
+        var queryUrl = apiurl + '/api/ApiDataDictDetail/GetPageListJson';
+        $('#gridTable').ysTable({
+            method: 'post', //请求方式
+            contentType: 'application/json',
+            dataType: 'json',
+            url: queryUrl,
+            sortName: 'DictSort',
+            sortOrder: 'Asc',
+            columns: [
+                { checkbox: true, visible: true },
+                { field: 'Id', title: 'Id', visible: false },
+                { field: 'DictKey', title: '字典键' },
+                { field: 'DictValue', title: '字典值' },
+                {
+                    field: 'IsDefault', title: '系统默认', formatter: function (value, row, index) {
+                        return tinyedu.getValueByKey(tinyedu.getJson(@Html.Raw(typeof(IsEnum).EnumToDictionaryString())), value);
+                    }
+                },
+                {
+                    field: 'ListClass', title: '显示样式', formatter: function (value, row, index) {
+                        if (value) {
+                            return '<span class="badge badge-' + value + '">&nbsp;&nbsp;&nbsp;&nbsp;</span>';
+                        }
+                    }
+                },
+                {
+                    field: 'DictStatus', title: '状态', formatter: function (value, row, index) {
+                        if (row.DictStatus == "@StatusEnum.Yes.ParseToInt()") {
+                            return '<span class="badge badge-primary">' + "@StatusEnum.Yes.GetDescription()" + '</span>';
+                        } else {
+                            return '<span class="badge badge-warning">' + "@StatusEnum.No.GetDescription()" + '</span>';
+                        }
+                    }
+                },
+                {
+                    field: 'BaseModifyTime', title: '创建时间', formatter: function (value, row, index) {
+                        return tinyedu.formatDate(value, "yyyy-MM-dd HH:mm:ss");
+                    }
+                }
+            ],
+            ajaxOptions: {
+                headers: { "Sign": appSign }
+            },
+            queryParams: function (params) {
+                var _json = getConditionJson(params);
+                var param = {
+                    param: _json.param,
+                    pagination: _json.pagination
+                };
+                return param;
+            }
+        })
+    }
+
+    function searchGrid() {
+        $('#gridTable').ysTable('search');
+        resetToolbarStatus();
+    }
+
+    function showSaveForm(bAdd) {
+        var id = 0;
+        if (!bAdd) {
+            var selectedRow = $("#gridTable").bootstrapTable("getSelections");
+            if (!tinyedu.checkRowEdit(selectedRow)) {
+                return;
+            }
+            else {
+                id = selectedRow[0].Id;
+            }
+        }
+        tinyedu.openDialog({
+            title: id > 0 ? "编辑字典数据" : "添加字典数据",
+            content: '@Url.Content("~/DemoApiRequest/DataDictDetail/DetailEdit")' + '?id=' + id + '&dictType=' + dictType,
+            width: "768px",
+            height: "600px",
+            callback: function (index, layero) {
+                var iframeWin = window[layero.find('iframe')[0]['name']];
+                iframeWin.saveForm(index);
+            }
+        });
+    }
+
+    function deleteForm() {
+        var selectedRow = $("#gridTable").bootstrapTable("getSelections");
+        if (tinyedu.checkRowDelete(selectedRow)) {
+            tinyedu.confirm("确认要删除选中的" + selectedRow.length + "条数据吗？", function () {
+                var ids = tinyedu.getIds(selectedRow);
+                tinyedu.ajax({
+                    url: apiurl + '/api/ApiDataDictDetail/DeleteFormJson' + '?ids=' + ids,
+                    type: "post",
+                    headers: { "Sign": g_sign },
+                    success: function (obj) {
+                        if (obj.Tag == 1) {
+                            tinyedu.msgSuccess(obj.Message);
+                            searchGrid();
+                        }
+                        else {
+                            tinyedu.msgError(obj.Message);
+                        }
+                    }
+                });
+            });
+        }
+    }
+</script>
