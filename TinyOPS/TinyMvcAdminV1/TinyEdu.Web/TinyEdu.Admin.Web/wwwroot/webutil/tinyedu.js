@@ -168,7 +168,7 @@
                 type: "get",
                 data: option.data || {},
                 dataType: option.dataType || "json",
-                contentType: option.contentType || "application/json",
+                contentType: option.contentType || "application/x-www-form-urlencoded; charset=UTF-8",
                 headers: option.headers,
                 error: function (xhr, status, obj) { tinyedu.alertError("系统出错了"); },
                 success: function (rdata) {

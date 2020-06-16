@@ -25,14 +25,13 @@
     </form>
 </div>
 @section header{
-<script src="~/webutil/tinyedu.js"></script>
+
 }
 <script type="text/javascript">
     var apiUrl = configuration.tscapiurl;
+    var appSign = GetCheckAppString();
     var id = ys.request("id");
     $(function () {
-        var appSign = GetCheckAppString();
-
         getForm(appSign);
 
         $("#form").validate({
@@ -60,6 +59,7 @@
             tinyedu.ajax({
                 url: apiUrl + '/api/ApiDataDict/GetMaxSortJson',
                 type: "get",
+                headers: { "Sign": appSign },
                 success: function (obj) {
                     if (obj.Tag == 1) {
                         var defaultData = {};
@@ -78,7 +78,9 @@
                 url: apiUrl + '/api/ApiDataDict/SaveFormJson',
                 contentType: 'application/json', //必须有
                 type: 'post',
+                headers: { "Sign": appSign },
                 data: JSON.stringify(postData),
+                dataType: 'json',
                 success: function (obj) {
                     if (obj.Tag == 1) {
                         tinyedu.msgSuccess(obj.Message);

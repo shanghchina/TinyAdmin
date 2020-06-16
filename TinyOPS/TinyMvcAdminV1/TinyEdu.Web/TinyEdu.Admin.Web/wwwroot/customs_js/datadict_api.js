@@ -54,7 +54,7 @@ function initApiGrid(appSign) {
             { field: 'DictSort', title: '字典排序' },
             {
                 field: 'BaseModifyTime', title: '创建时间', formatter: function (value, row, index) {
-                    return ys.formatDate(value, "yyyy-MM-dd HH:mm:ss");
+                    return tinyedu.formatDate(value, "yyyy-MM-dd HH:mm:ss");
                 }
             },
             {
@@ -96,14 +96,14 @@ function showSaveForm(bAdd) {
     var id = 0;
     if (!bAdd) {
         var selectedRow = $("#gridTable").bootstrapTable("getSelections");
-        if (!ys.checkRowEdit(selectedRow)) {
+        if (!tinyedu.checkRowEdit(selectedRow)) {
             return;
         }
         else {
             id = selectedRow[0].Id;
         }
     }
-    ys.openDialog({
+    tinyedu.openDialog({
         title: id > 0 ? "编辑字典" : "添加字典",
         content: '/DemoApiRequest/DataDictManage/Edit' + '?id=' + id,
         width: "768px",
@@ -117,19 +117,21 @@ function showSaveForm(bAdd) {
 
 function deleteForm() {
     var selectedRow = $("#gridTable").bootstrapTable("getSelections");
-    if (ys.checkRowDelete(selectedRow)) {
-        ys.confirm("确认要删除选中的" + selectedRow.length + "条数据吗？", function () {
-            var ids = ys.getIds(selectedRow);
-            ys.ajax({
+    if (tinyedu.checkRowDelete(selectedRow)) {
+        var appSign = GetCheckAppString();
+        tinyedu.confirm("确认要删除选中的" + selectedRow.length + "条数据吗？", function () {
+            var ids = tinyedu.getIds(selectedRow);
+            tinyedu.ajax({
                 url: configuration.tscapiurl + '/api/ApiDataDict/DeleteFormJson' + '?ids=' + ids,
                 type: "post",
+                headers: { "Sign": appSign },
                 success: function (obj) {
                     if (obj.Tag == 1) {
-                        ys.msgSuccess(obj.Message);
+                        tinyedu.msgSuccess(obj.Message);
                         searchGrid();
                     }
                     else {
-                        ys.msgError(obj.Message);
+                        tinyedu.msgError(obj.Message);
                     }
                 }
             });
