@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <Filter>
+    <XmlValidation>
+      <!--订单-->
+      <Model Name="OnlyEdu.Model.OrderDomain">
+        <Property PropertyName="OrderNo" Message="订单编号错误">
+          <Validation RuleName="Requiry"  ValidationType="Add|Modify" Message="订单编号必填"></Validation>
+          <Validation RuleName="LengthRange"  ValidationType="Add|Modify" P0="0" P1="20" Message="订单编号最大长度为20字符"></Validation>
+        </Property>
+        <Property PropertyName="AppId" Message="系统AppId格式错误">
+          <Validation RuleName="Requiry"  ValidationType="Add|Modify" Message="系统AppId必填"></Validation>
+          <Validation RuleName="GuidKey"  ValidationType="Add|Modify"  Message="业务系统的唯一识别码应为GUID类型"></Validation>
+        </Property>
+        <Property PropertyName="DJLX" Message="单据类型错误">
+          <Validation RuleName="Requiry"  ValidationType="Add|Modify" Message="单据类型必填"></Validation>
+        </Property>
+        <Property PropertyName="FRGSBH" Message="法人公司编号错误">
+          <Validation RuleName="Requiry"  ValidationType="Add|Modify" Message="法人公司编号必填"></Validation>
+          <Validation RuleName="LengthRange"  ValidationType="Add|Modify"  P0="0" P1="40"  Message="法人公司编号最大长度为40字符"></Validation>
+        </Property>
+        <Property PropertyName="XSF_YHZH" Message="销售方银行帐号错误">
+          <Validation RuleName="LengthRange"  ValidationType="Add|Modify"  P0="0" P1="100"  Message="销售方银行帐号最大长度为100字符"></Validation>
+        </Property>
+        <Property PropertyName="GMF_MC" Message="购买方名称错误">
+          <Validation RuleName="LengthRange"  ValidationType="Add|Modify"  P0="0" P1="100"  Message="购买方名称最大长度为100字符"></Validation>
+        </Property>
+        <Property PropertyName="GMF_NSRSBH" Message="购买方纳税人识别号错误">
+          <Validation RuleName="LengthRange"  ValidationType="Add|Modify"  P0="0" P1="20"  Message="购买方纳税人识别号最大长度为20字符"></Validation>
+        </Property>
+        <Property PropertyName="GMF_DZDH" Message="购买方地址、电话错误">
+          <Validation RuleName="LengthRange"  ValidationType="Add|Modify"  P0="0" P1="100"  Message="购买方地址、电话最大长度为100字符"></Validation>
+        </Property>
+        <Property PropertyName="GMF_YHZH" Message="购买方银行帐号错误">
+          <Validation RuleName="LengthRange"  ValidationType="Add|Modify"  P0="0" P1="100"  Message="购买方银行帐号最大长度为100字符"></Validation>
+        </Property>
+        <Property PropertyName="OriginOrderNo" Message="原始订单流水错误">
+          <Validation RuleName="LengthRange"  ValidationType="Add|Modify"  P0="0" P1="20"  Message="原始订单流水最大长度为20字符"></Validation>
+        </Property>
+        <Property PropertyName="JSHJ" Message="价税合计错误">
+          <Validation RuleName="Requiry"  ValidationType="Add|Modify" Message="价税合计必填"></Validation>
+          <Validation RuleName="Float"  ValidationType="Add|Modify"  P0="10" P1="0" P2="2" Message="价税合计最大12位小数点最多2位"></Validation>
+        </Property>
+        <Property PropertyName="HJJE" Message="合计金额错误">
+          <Validation RuleName="Requiry"  ValidationType="Add|Modify" Message="合计金额必填"></Validation>
+          <Validation RuleName="Float"  ValidationType="Add|Modify"  P0="10" P1="0" P2="2" Message="合计金额最大12位小数点最多2位"></Validation>
+        </Property>
+        <Property PropertyName="HJSE" Message="合计税额错误">
+          <Validation RuleName="Requiry"  ValidationType="Add|Modify" Message="合计税额必填"></Validation>
+          <Validation RuleName="Float"  ValidationType="Add|Modify"  P0="10" P1="0" P2="2" Message="合计税额最大12位小数点最多2位"></Validation>
+        </Property>
+        <Property PropertyName="StudentName" Message="学员名称错误">
+          <Validation RuleName="Requiry"  ValidationType="Add|Modify" Message="学员名称必填"></Validation>
+          <Validation RuleName="LengthRange"  ValidationType="Add|Modify" P0="0" P1="40" Message="学员名称最大长度为40字符"></Validation>
+        </Property>
+        <Property PropertyName="Title" Message="标题错误">
+          <Validation RuleName="Requiry"  ValidationType="Add|Modify" Message="标题必填"></Validation>
+          <Validation RuleName="LengthRange"  ValidationType="Add|Modify" P0="0" P1="40" Message="标题最大长度为40字符"></Validation>
+        </Property>
+        <Property PropertyName="FinanceUnit" Message="财务单元错误">
+          <Validation RuleName="Requiry"  ValidationType="Add|Modify" Message="财务单元必填"></Validation>
+          <Validation RuleName="LengthRange"  ValidationType="Add|Modify" P0="0" P1="40" Message="财务单元最大长度为40字符"></Validation>
+        </Property>
+        <Property PropertyName="FinanceDepartment" Message="财务事业部错误">
+          <Validation RuleName="Requiry"  ValidationType="Add|Modify" Message="财务事业部必填"></Validation>
+          <Validation RuleName="LengthRange"  ValidationType="Add|Modify" P0="0" P1="40" Message="财务事业部最大长度为40字符"></Validation>
+        </Property>
+        <Property PropertyName="GHFQYLX" Message="购买方企业性质错误">
+          <Validation RuleName="Requiry"  ValidationType="Add|Modify" Message="购买方企业性质必填"></Validation>
+          <Validation RuleName="LengthRange"  ValidationType="Add|Modify" P0="0" P1="2" Message="购买方企业性质最大长度为2字符"></Validation>
+        </Property>
+      </Model>
+    </XmlValidation>
+  </Filter>
+</configuration>

@@ -52,6 +52,35 @@
             
             </summary>
         </member>
+        <member name="T:TinyEdu.Admin.WebApi.Controllers.ApiBaseController">
+            <summary>
+            基于dapper的api基类
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiBaseController.ApiSuccessResult``1(``0)">
+            <summary>
+            API规范返回值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiBaseController.ApiErrorResult(System.String)">
+            <summary>
+            API规范返回值
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiBaseController.ApiFailResult(System.String)">
+            <summary>
+            API规范返回值
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
         <member name="T:TinyEdu.Admin.WebApi.Controllers.ApiDataDictController">
             <summary>
             DataDictController
@@ -219,6 +248,42 @@
             <param name="fileName"></param>
             <param name="delete"></param>
         </member>
+        <member name="T:TinyEdu.Admin.WebApi.Controllers.LivelyController">
+            <summary>
+            心跳检测
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.LivelyController.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            构造函数
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.LivelyController.Test">
+            <summary>
+            活跃接口功能Test
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.LivelyController.ReadWriteFileAndDB">
+            <summary>
+            读写文件和数据库
+            </summary>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.Controllers.Lively">
+            <summary>
+            接口功能定义的类
+            </summary>
+        </member>
+        <member name="P:TinyEdu.Admin.WebApi.Controllers.Lively.Operation">
+            <summary>
+            操作内容：读写文件 读写数据库
+            </summary>
+        </member>
+        <member name="P:TinyEdu.Admin.WebApi.Controllers.Lively.OperationResult">
+            <summary>
+            操作结果：成功或报错
+            </summary>
+        </member>
         <member name="T:TinyEdu.Admin.WebApi.Controllers.NewsController">
             <summary>
             新闻
@@ -349,6 +414,22 @@
             <param name="context"></param>
             <param name="next"></param>
             <returns></returns>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.HttpGlobalExceptionFilter">
+            <summary>
+            捕获全局异常信息
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.HttpGlobalExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            异常处理
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.NoCheck">
+            <summary>
+            无需验证,加在方法上，可以不验证此方法
+            </summary>
         </member>
         <member name="T:TinyEdu.Admin.WebApi.Program">
             <summary>

@@ -31,6 +31,10 @@
   <ItemGroup>
     <ProjectReference Include="..\..\TinyEdu.Business\TinyEdu.Business.AutoJob\TinyEdu.Business.AutoJob.csproj" />
     <ProjectReference Include="..\..\TinyEdu.Business\TinyEdu.Business\TinyEdu.Business.csproj" />
+    <ProjectReference Include="..\..\TinyEdu.Common\TinyEdu.Common.Configuration\TinyEdu.Common.Configuration.csproj" />
+    <ProjectReference Include="..\..\TinyEdu.Common\TinyEdu.Common.Dapper\TinyEdu.Common.Dapper.csproj" />
+    <ProjectReference Include="..\..\TinyEdu.Domain\TinyEdu.Admin.Contract\TinyEdu.Admin.Contract.csproj" />
+    <ProjectReference Include="..\..\TinyEdu.Domain\TinyEdu.Admin.DomainService\TinyEdu.Admin.DomainService.csproj" />
     <ProjectReference Include="..\..\TinyEdu.Web.Util\TinyEdu.Web.Util.csproj" />
   </ItemGroup>
 

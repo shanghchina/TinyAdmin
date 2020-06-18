@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<containers>
+  <!--Repository层-->
+  <container name="Repository">
+    <!--APP SYS-->
+    <!--<register type="OnlyEdu.POC.Repository.IAPP_AppidRepository, OnlyEdu.POC.Repository"
+      mapTo="OnlyEdu.POC.Repository.APP_AppidRepository, OnlyEdu.POC.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="OnlyEdu.POC.Repository.IAPP_SysLogRepository, OnlyEdu.POC.Repository"
+     mapTo="OnlyEdu.POC.Repository.APP_SysLogRepository, OnlyEdu.POC.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="OnlyEdu.POC.Repository.IAPP_WhiteListRepository, OnlyEdu.POC.Repository"
+     mapTo="OnlyEdu.POC.Repository.APP_WhiteListRepository, OnlyEdu.POC.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="OnlyEdu.POC.Repository.ISYS_InvokeLogRepository, OnlyEdu.POC.Repository"
+    mapTo="OnlyEdu.POC.Repository.SYS_InvokeLogRepository, OnlyEdu.POC.Repository" >
+      <lifetime type="singleton" />
+    </register>
+    <register type="OnlyEdu.POC.Repository.ISYS_DictionaryRepository, OnlyEdu.POC.Repository"
+    mapTo="OnlyEdu.POC.Repository.SYS_DictionaryRepository, OnlyEdu.POC.Repository" >
+      <lifetime type="singleton" />
+    </register>-->
+
+    <register type="TinyEdu.Admin.Repository.IAPP_SysLogRepository, TinyEdu.Admin.Repository"
+              mapTo="TinyEdu.Admin.Repository.APP_SysLogRepository, TinyEdu.Admin.Repository" >
+      <lifetime type="singleton" />
+    </register>
+  </container>
+
+  <!--Service层-->
+  <container name="Service">
+    <register type="TinyEdu.Admin.DomainService.IAPP_SysLogDomainService, TinyEdu.Admin.DomainService"
+              mapTo="TinyEdu.Admin.DomainService.APP_SysLogDomainService, TinyEdu.Admin.DomainService" >
+      <lifetime type="singleton" />
+    </register>
+   
+
+    <!--POC-->
+    <!--<register type="OnlyEdu.POC.DomainService.IT_POC_ProductDomainService, OnlyEdu.POC.DomainService"
+              mapTo="OnlyEdu.POC.DomainService.T_POC_ProductDomainService, OnlyEdu.POC.DomainService" >
+      <lifetime type="singleton" />
+    </register>-->
+  </container>
+</containers>

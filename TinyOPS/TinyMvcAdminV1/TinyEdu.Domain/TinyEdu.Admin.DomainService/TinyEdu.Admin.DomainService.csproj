@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Sys\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\TinyEdu.Util\TinyEdu.Util\TinyEdu.Util.csproj" />
+    <ProjectReference Include="..\TinyEdu.Admin.Domain\TinyEdu.Admin.Domain.csproj" />
+    <ProjectReference Include="..\TinyEdu.Admin.Repository\TinyEdu.Admin.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

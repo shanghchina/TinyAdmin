@@ -21,6 +21,9 @@ using TinyEdu.Business.AutoJob;
 using TinyEdu.Util;
 using TinyEdu.Util.Extension;
 using TinyEdu.Util.Model;
+using TinyEdu.Common.Dapper.Middleware;
+using TinyEdu.Common.Dapper.DI;
+using TinyEdu.Common.Dapper.Persistence.Data;
 
 namespace TinyEdu.Admin.WebApi
 {
@@ -67,6 +70,23 @@ namespace TinyEdu.Admin.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            #region 添加ioc dapper
+            //注入数据库
+            string basePath = Path.GetDirectoryName(typeof(Program).Assembly.Location);
+            string iocConfigFileName = $@"{basePath}/Config/DI/IoC.xml";
+
+            services.AddOnlyDapper(new OnlyDapperOptions()
+            {
+                IoCXmlPath = iocConfigFileName,
+            });
+            IoC.InitializeWith(services);
+            var builder = new ConfigurationBuilder()
+                     .SetBasePath(Directory.GetCurrentDirectory())
+                     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
+            var configuration = builder.Build();
+            services.AddSingleton(new DataBaseHelper(configuration));
+            #endregion
+
             // 配置日志log4net
             services.AddLogging(logConfig =>
             {
