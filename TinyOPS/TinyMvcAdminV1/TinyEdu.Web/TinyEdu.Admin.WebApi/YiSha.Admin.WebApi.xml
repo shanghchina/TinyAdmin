@@ -63,7 +63,6 @@
             </summary>
             <typeparam name="T"></typeparam>
             <param name="data"></param>
-            <param name="message"></param>
             <returns></returns>
         </member>
         <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiBaseController.ApiErrorResult(System.String)">
@@ -166,6 +165,71 @@
             <returns></returns>
         </member>
         <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiDataDictDetailController.DeleteFormJson(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="ids"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.Controllers.ApiMenuController">
+            <summary>
+            菜单功能api
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiMenuController.GetMenuTreeListJson(TinyEdu.Model.Param.SystemManage.MenuListParam)">
+            <summary>
+            
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="T:TinyEdu.Admin.WebApi.Controllers.ApiRoleController">
+            <summary>
+            角色管理api接口
+            </summary>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiRoleController.GetListJson(TinyEdu.Model.Param.SystemManage.RoleListParam)">
+            <summary>
+            
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiRoleController.GetPageListJson(TinyEdu.Model.RoleListRequest)">
+            <summary>
+            
+            </summary>
+            <param name="paramRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiRoleController.GetFormJson(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiRoleController.GetRoleName(TinyEdu.Model.Param.SystemManage.RoleListParam)">
+            <summary>
+            
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiRoleController.GetMaxSortJson">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiRoleController.SaveFormJson(TinyEdu.Entity.SystemManage.RoleEntity)">
+            <summary>
+            
+            </summary>
+            <param name="entity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:TinyEdu.Admin.WebApi.Controllers.ApiRoleController.DeleteFormJson(System.String)">
             <summary>
             
             </summary>

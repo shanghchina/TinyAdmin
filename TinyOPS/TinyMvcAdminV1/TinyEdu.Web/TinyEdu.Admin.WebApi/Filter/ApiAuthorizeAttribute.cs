@@ -146,6 +146,9 @@ namespace TinyEdu.Admin.WebApi
         /// <returns></returns>
         public override async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
+            //先校验header
+            CheckAppSign(context);
+
             Stopwatch sw = new Stopwatch();
             sw.Start();
 
@@ -238,7 +241,6 @@ namespace TinyEdu.Admin.WebApi
             AsyncTaskHelper.StartTask(taskAction);
             #endregion
 
-            CheckAppSign(context);
         }
 
         //    /// <summary>

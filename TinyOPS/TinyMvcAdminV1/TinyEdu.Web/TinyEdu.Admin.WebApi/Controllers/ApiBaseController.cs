@@ -17,7 +17,6 @@ namespace TinyEdu.Admin.WebApi.Controllers
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="data"></param>
-        /// <param name="message"></param>
         /// <returns></returns>
         protected BaseResponseModel<T> ApiSuccessResult<T>(T data)
         {
