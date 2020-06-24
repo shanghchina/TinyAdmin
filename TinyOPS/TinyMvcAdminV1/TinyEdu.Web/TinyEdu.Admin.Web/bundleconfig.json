@@ -143,7 +143,7 @@
     "inputFiles": [
       "wwwroot/lib/zTree/v3/js/jquery.ztree.all-3.5.js",
       "wwwroot/yisha/js/yisha-jquery-ztree-plugin.js",
-      "wwwroot/webutil/tinyedu-jquery-ztree-plugin.js"
+      "wwwroot/webutil/tiny-jquery-ztree-plugin.js"
     ],
     "minify": {
       "enabled": true,

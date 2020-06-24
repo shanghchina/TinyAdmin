@@ -106,7 +106,14 @@ namespace TinyEdu.Admin.Web.Controllers
     /// </summary>
     public class AjaxPostParam
     {
+        /// <summary>
+        /// 后端提供的api URL
+        /// </summary>
         public string url { get; set; }
+
+        /// <summary>
+        /// api接口传入参数
+        /// </summary>
         public string json { get; set; }
 
     }

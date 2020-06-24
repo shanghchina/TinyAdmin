@@ -1,10 +1,10 @@
 ﻿(function ($) {
     "use strict";
-    $.fn.tinyeduTree = function (option, param) {
+    $.fn.tinyTree = function (option, param) {
         if (typeof option == 'string') {
-            return $.fn.tinyeduTree.methods[option](this, param);
+            return $.fn.tinyTree.methods[option](this, param);
         }
-        var _option = $.extend({}, $.fn.tinyeduTree.defaults, option || {});
+        var _option = $.extend({}, $.fn.tinyTree.defaults, option || {});
         var target = $(this);
         var id = target.attr("id");
 
@@ -30,7 +30,7 @@
         });
         return target;
     };
-    $.fn.tinyeduTree.methods = {
+    $.fn.tinyTree.methods = {
         getCheckedNodes: function (target, column) {
             var zTreeObj = $.fn.zTree.getZTreeObj($(target).attr("id"));
             var _column = tinyedu.isNullOrEmpty(column) ? "id" : column;
@@ -62,7 +62,7 @@
             }
         }
     };
-    $.fn.tinyeduTree.defaults = {
+    $.fn.tinyTree.defaults = {
         url:'',
         async: false,
         maxHeight: "300px",
